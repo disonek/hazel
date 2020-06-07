@@ -1,4 +1,5 @@
 #include "Hazel.hpp"
+#include "spdlog\spdlog.h"
 
 class Sandbox : public hazel::Application
 {
