@@ -1,4 +1,4 @@
-hazel/bin
-hazel/bin_int
-hazel/.vs
+bin
+bin_int
+.vs
 *.user
