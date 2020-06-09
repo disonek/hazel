@@ -2,6 +2,7 @@
 
 #include "Core.hpp"
 #include "spdlog/spdlog.h"
+#include "spdlog/fmt/ostr.h"
 #include <memory>
 
 namespace hazel
@@ -27,8 +28,8 @@ private:
 #define HZ_CORE_ERROR(...)  ::hazel::Log::getCoreLogger()->error(__VA_ARGS__)
 #define HZ_CORE_FATAL(...)  ::hazel::Log::getCoreLogger()->trace(__VA_ARGS__)
 
-#define HZ_CLIENT_TRACE(...)  ::hazel::Log::getClientLogger()->trace(__VA_ARGS__)
-#define HZ_CLIENT_INFO(...)	  ::hazel::Log::getClientLogger()->info(__VA_ARGS__)
-#define HZ_CLIENT_WARN(...)	  ::hazel::Log::getClientLogger()->warn(__VA_ARGS__)
-#define HZ_CLIENT_ERROR(...)  ::hazel::Log::getClientLogger()->error(__VA_ARGS__)
-#define HZ_CLIENT_FATAL(...)  ::hazel::Log::getClientLogger()->trace(__VA_ARGS__)
+#define HZ_TRACE(...)		::hazel::Log::getClientLogger()->trace(__VA_ARGS__)
+#define HZ_INFO(...)		::hazel::Log::getClientLogger()->info(__VA_ARGS__)
+#define HZ_WARN(...)		::hazel::Log::getClientLogger()->warn(__VA_ARGS__)
+#define HZ_ERROR(...)		::hazel::Log::getClientLogger()->error(__VA_ARGS__)
+#define HZ_FATAL(...)		::hazel::Log::getClientLogger()->trace(__VA_ARGS__)

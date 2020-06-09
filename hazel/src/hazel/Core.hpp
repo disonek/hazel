@@ -10,3 +10,6 @@
 	#error Hazel only support Windows
 #endif
 
+template<typename T>
+constexpr auto BIT(T x) { return (1 << x); }
+

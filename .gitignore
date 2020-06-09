@@ -1,4 +1,11 @@
-bin
-bin_int
-.vs
-*.user
+**/bin/
+!vendor/bin/premake/
+bin_int/
+
+*.log
+
+.vs/
+**.sln
+**.vcxproj
+**.vcxproj.filters
+**.vcxproj.user

@@ -8,7 +8,7 @@ int main(int argc, char** argv)
 {
 	hazel::Log::init();
 	HZ_CORE_WARN("coreLoger init");
-	HZ_CLIENT_ERROR("coreLoger init");
+	HZ_ERROR("coreLoger init");
 	auto app = hazel::CreateApplication();
 	app->run();
 	delete app;
