@@ -1,6 +1,5 @@
 workspace "hazel"
 	architecture "x64"
-	startproject "sandbox"
 
 	configurations
 	{
@@ -18,6 +17,9 @@ project "hazel"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
+
+	pchheader "hzpch.hpp"
+	pchsource "hazel/src/hzpch.cpp"
 
 	files
 	{

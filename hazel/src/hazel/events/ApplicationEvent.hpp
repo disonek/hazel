@@ -1,8 +1,7 @@
 #pragma once
+#include "hzpch.hpp"
 
 #include "Event.hpp"
-
-#include <sstream>
 
 namespace hazel {
 

@@ -1,5 +1,6 @@
-#include "Application.hpp"
+#include "hzpch.hpp"
 
+#include "Application.hpp"
 #include "hazel/events/ApplicationEvent.hpp"
 #include "hazel/Log.hpp"
 
