@@ -9,10 +9,12 @@ workspace "hazel"
 	}
 
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
-IcludeDir = {}
-IcludeDir["GLFW"] = "hazel/vendor/GLFW/include"
+IncludeDir = {}
+IncludeDir["GLFW"] = "hazel/vendor/GLFW/include"
+IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
 
 include "hazel/vendor/GLFW"
+include "Hazel/vendor/Glad"
 
 project "hazel"
 	location "hazel"
@@ -36,12 +38,14 @@ project "hazel"
 	{
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
-		"%{IcludeDir.GLFW}"
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.Glad}"
 	}
 
 	links
 	{
 		"GLFW",
+		"Glad",
 		"opengl32.lib"
 	}
 
@@ -53,7 +57,8 @@ project "hazel"
 	defines
 	{
 		"HZ_PLATFORM_WINDOWS",
-		"HZ_BUILD_DLL"
+		"HZ_BUILD_DLL",
+		"GLFW_INCLUDE_NONE"
 	}
 
 	postbuildcommands
@@ -63,14 +68,17 @@ project "hazel"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
+		buildoptions "/MDd"
 		symbols  "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
+		buildoptions "/MD"
 		optimize "On"
 
 project "sandbox"
@@ -111,12 +119,15 @@ project "sandbox"
 
 	filter "configurations:Debug"
 		defines "HZ_DEBUG"
+		buildoptions "/MDd"
 		symbols  "On"
 
 	filter "configurations:Release"
 		defines "HZ_RELEASE"
+		buildoptions "/MD"
 		optimize "On"
 
 	filter "configurations:Dist"
 		defines "HZ_DIST"
+		buildoptions "/MD"
 		optimize "On"

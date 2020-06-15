@@ -4,5 +4,6 @@
 
 #include "hazel\Application.hpp"
 #include "hazel\Log.hpp"
+#include "hazel\Layer.hpp"
 
 #include "hazel\EntryPoint.hpp"
