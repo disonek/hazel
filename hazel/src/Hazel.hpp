@@ -6,4 +6,6 @@
 #include "hazel\Log.hpp"
 #include "hazel\Layer.hpp"
 
+#include "hazel\ImGui\ImGuiLayer.hpp"
+
 #include "hazel\EntryPoint.hpp"

@@ -11,10 +11,12 @@ workspace "hazel"
 outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["GLFW"] = "hazel/vendor/GLFW/include"
-IncludeDir["Glad"] = "Hazel/vendor/Glad/include"
+IncludeDir["Glad"] = "hazel/vendor/Glad/include"
+IncludeDir["ImGui"] = "hazel/vendor/imgui"
 
 include "hazel/vendor/GLFW"
-include "Hazel/vendor/Glad"
+include "hazel/vendor/Glad"
+include "hazel/vendor/imgui"
 
 project "hazel"
 	location "hazel"
@@ -39,13 +41,15 @@ project "hazel"
 		"%{prj.name}/src",
 		"%{prj.name}/vendor/spdlog/include",
 		"%{IncludeDir.GLFW}",
-		"%{IncludeDir.Glad}"
+		"%{IncludeDir.Glad}",
+		"%{IncludeDir.ImGui}"
 	}
 
 	links
 	{
 		"GLFW",
 		"Glad",
+		"ImGui",
 		"opengl32.lib"
 	}
 
