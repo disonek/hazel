@@ -3,6 +3,7 @@
 #include "Application.hpp"
 #include "hazel/Log.hpp"
 
+#include "Input.hpp"
 //#include "GLFW/glfw3.h"
 #include <glad/glad.h>
 
@@ -62,6 +63,9 @@ namespace hazel
 
 			for (Layer* layer : m_LayerStack)
 				layer->OnUpdate();
+
+			auto [x, y] = Input::GetMousePosition();
+			HZ_CORE_TRACE("{0}, {1}", x, y);
 			m_Window->OnUpdate();
 		}
 	}

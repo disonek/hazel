@@ -7,7 +7,6 @@
 #include "hazel/LayerStack.hpp"
 
 
-
 namespace hazel
 {
 

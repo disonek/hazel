@@ -15,9 +15,11 @@ IncludeDir["GLFW"] = "hazel/vendor/GLFW/include"
 IncludeDir["Glad"] = "hazel/vendor/Glad/include"
 IncludeDir["ImGui"] = "hazel/vendor/imgui"
 
-include "hazel/vendor/GLFW"
-include "hazel/vendor/Glad"
-include "hazel/vendor/imgui"
+group "Dependencies"
+	include "hazel/vendor/GLFW"
+	include "hazel/vendor/Glad"
+	include "hazel/vendor/imgui"
+group ""
 
 project "hazel"
 	location "hazel"
@@ -68,7 +70,7 @@ project "hazel"
 
 	postbuildcommands
 	{
-		("{COPY} %{cfg.buildtarget.relpath} ../bin/" .. outputdir .. "/sandbox")
+		("{COPY} %{cfg.buildtarget.relpath} \"../bin/" .. outputdir .. "/sandbox/\"")
 	}	
 
 	filter "configurations:Debug"
