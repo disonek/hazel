@@ -24,9 +24,9 @@ group ""
 
 project "hazel"
 	location "hazel"
-	kind "SharedLib"
+	kind "StaticLib"
 	language "C++"
-	staticruntime "off"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
@@ -96,7 +96,7 @@ project "sandbox"
 	location "sandbox"
 	kind "ConsoleApp"
 	language "C++"
-	staticruntime "off"
+	staticruntime "on"
 
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
@@ -112,6 +112,7 @@ project "sandbox"
 	{
 		"hazel/vendor/spdlog/include",
 		"hazel/src",
+		"hazel/vendor",
 		"%{IncludeDir.glm}"
 	}
 

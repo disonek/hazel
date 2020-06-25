@@ -6,6 +6,8 @@
 #include "hazel/events/Event.hpp"
 #include "hazel/LayerStack.hpp"
 
+#include "hazel/ImGui/ImGuiLayer.hpp"
+
 
 namespace hazel
 {
@@ -29,6 +31,7 @@ private:
 	bool OnWnidowClose(WindowCloseEvent& e);
 
 	std::unique_ptr<Window> m_Window;
+	ImGuiLayer* m_ImGuiLayer;
 	bool m_Running = true;
 	LayerStack m_LayerStack;
 
