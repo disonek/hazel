@@ -1,5 +1,4 @@
 #include "Hazel.hpp"
-#include "spdlog\spdlog.h"
 
 #include "imgui/imgui.h"
 

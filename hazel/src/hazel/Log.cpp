@@ -17,14 +17,4 @@ namespace hazel
 		clientLogger = spdlog::stdout_color_mt("APP");
 		clientLogger->set_level(spdlog::level::trace);
 	}
-
-	inline std::shared_ptr<spdlog::logger>& Log::getCoreLogger()
-	{
-		return coreLogger;
-	}
-	
-	inline std::shared_ptr<spdlog::logger>& Log::getClientLogger()
-	{
-		return clientLogger;
-	}
 }

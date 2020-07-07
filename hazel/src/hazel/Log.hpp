@@ -11,8 +11,8 @@ class HAZEL_API Log
 {
 public:
 	static void init();
-	inline static std::shared_ptr<spdlog::logger>& getCoreLogger();
-	inline static std::shared_ptr<spdlog::logger>& getClientLogger();
+	inline static std::shared_ptr<spdlog::logger>& getCoreLogger() {return coreLogger;}
+	inline static std::shared_ptr<spdlog::logger>& getClientLogger() {return clientLogger;};
 
 private:
 	static std::shared_ptr<spdlog::logger> coreLogger;
