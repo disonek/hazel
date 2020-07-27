@@ -8,6 +8,7 @@
 
 #include "hazel/ImGui/ImGuiLayer.hpp"
 
+#include "hazel/renderer/Shader.hpp"
 
 namespace hazel
 {
@@ -37,6 +38,7 @@ private:
 	unsigned int m_VertexArray;
 	unsigned int m_VertexBuffer;
 	unsigned int m_IndexBuffer;
+	std::unique_ptr<Shader> m_Shader;
 
 	static Application* s_Instance;
 };
