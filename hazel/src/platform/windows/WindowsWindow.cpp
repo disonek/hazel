@@ -53,7 +53,7 @@ namespace hazel {
 
 		m_Context = new OpenGLContext(m_Window);
 		m_Context->Init();
-		
+
 		glfwSetWindowUserPointer(m_Window, &m_Data);
 		SetVSync(true);
 
