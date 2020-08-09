@@ -6,17 +6,15 @@
 #include "hazel/events/Event.hpp"
 #include "hazel/LayerStack.hpp"
 
+#include "hazel/core/Timestep.hpp"
+
 #include "hazel/ImGui/ImGuiLayer.hpp"
 
-#include "hazel/renderer/Shader.hpp"
-#include "hazel/renderer/Buffer.hpp"
-#include "hazel/renderer/VertexArray.hpp"
-#include "hazel/renderer/OrthographicCamera.hpp"
 
 namespace hazel
 {
 
-class HAZEL_API Application
+class Application
 {
 public:
 	Application();
@@ -38,14 +36,8 @@ private:
 	ImGuiLayer* m_ImGuiLayer;
 	bool m_Running = true;
 	LayerStack m_LayerStack;
+	float m_LastFrameTime = 0.0f;
 
-	std::shared_ptr<Shader> m_Shader;
-	std::shared_ptr<VertexArray> m_VertexArray;
-
-	std::shared_ptr<Shader> m_BlueShader;
-	std::shared_ptr<VertexArray> m_SquareVA;
-
-	OrthographicCamera m_Camera;
 private:
 	static Application* s_Instance;
 };

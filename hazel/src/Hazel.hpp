@@ -10,6 +10,13 @@
 #include "hazel/KeyCodes.hpp"
 #include "hazel/MouseButtonCodes.hpp"
 
+#include "hazel/renderer/Renderer.hpp"
+#include "hazel/renderer/RenderCommand.hpp"
+#include "hazel/renderer/Buffer.hpp"
+#include "hazel/renderer/Shader.hpp"
+#include "hazel/renderer/VertexArray.hpp"
+#include "hazel/renderer/OrthographicCamera.hpp"
+
 #include "hazel/ImGui/ImGuiLayer.hpp"
 
 #include "hazel/EntryPoint.hpp"
