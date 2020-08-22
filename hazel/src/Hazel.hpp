@@ -14,6 +14,7 @@
 #include "hazel/renderer/RenderCommand.hpp"
 #include "hazel/renderer/Buffer.hpp"
 #include "hazel/renderer/Shader.hpp"
+#include "hazel/renderer/Texture.hpp"
 #include "hazel/renderer/VertexArray.hpp"
 #include "hazel/renderer/OrthographicCamera.hpp"
 
