@@ -2,6 +2,7 @@
 !vendor/bin/premake/
 bin_int/
 bin-int/
+build_win/
 
 *.log
 
