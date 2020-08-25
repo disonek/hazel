@@ -127,13 +127,13 @@ public:
 
 		m_FlatColorShader.reset(hazel::Shader::Create(flatColorShaderVertexSrc, flatColorShaderFragmentSrc));
 
-		// m_TextureShader.reset(hazel::Shader::Create("../../assets/shaders/Texture.glsl"));
+		m_TextureShader.reset(hazel::Shader::Create("assets/shaders/Texture.glsl"));
 
-		// m_Texture = hazel::Texture2D::Create("../../assets/textures/Checkerboard.png");
-		// m_ChernoLogoTexture = hazel::Texture2D::Create("../../assets/textures/ChernoLogo.png");
+		m_Texture = hazel::Texture2D::Create("assets/textures/Checkerboard.png");
+		m_ChernoLogoTexture = hazel::Texture2D::Create("assets/textures/ChernoLogo.png");
 
-		// std::dynamic_pointer_cast<hazel::OpenGLShader>(m_TextureShader)->Bind();
-		// std::dynamic_pointer_cast<hazel::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+		std::dynamic_pointer_cast<hazel::OpenGLShader>(m_TextureShader)->Bind();
+		std::dynamic_pointer_cast<hazel::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
 	}
 
 	void OnUpdate(hazel::Timestep ts) override
@@ -177,10 +177,10 @@ public:
 			}
 		}
 
-		// m_Texture->Bind();
-		// hazel::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
-		// m_ChernoLogoTexture->Bind();
-		// hazel::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_Texture->Bind();
+		hazel::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
+		m_ChernoLogoTexture->Bind();
+		hazel::Renderer::Submit(m_TextureShader, m_SquareVA, glm::scale(glm::mat4(1.0f), glm::vec3(1.5f)));
 
 		//Triangle 
 		//hazel::Renderer::Submit(m_Shader, m_VertexArray);

@@ -78,7 +78,7 @@ add_compile_definitions(
     HZ_PLATFORM_WINDOWS=1
     HZ_BUILD_DLL=1
     GLFW_INCLUDE_NONE=1
-    _CRT_SECURE_NO_WARNINGS2=1
+    _CRT_SECURE_NO_WARNINGS=1
     )
 
 target_precompile_headers(hazel
@@ -124,3 +124,6 @@ target_include_directories(hazel
     PUBLIC
         hazel
  )
+
+ file(COPY sandbox/assets DESTINATION ${CMAKE_BINARY_DIR})
+
