@@ -3,7 +3,7 @@
 bin_int/
 bin-int/
 build_win/
-
+build_lin/
 *.log
 
 .vs/
@@ -12,3 +12,4 @@ build_win/
 **.vcxproj.filters
 **.vcxproj.user
 sandbox/imgui.ini
+imgui.ini

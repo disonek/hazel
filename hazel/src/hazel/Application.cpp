@@ -1,4 +1,4 @@
-#include "hzpch.hpp"
+//#include "hzpch.h"
 
 #include "Application.hpp"
 #include "hazel/Log.hpp"
