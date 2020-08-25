@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "OpenGLTexture.hpp"
 
 #include "stb_image.hpp"

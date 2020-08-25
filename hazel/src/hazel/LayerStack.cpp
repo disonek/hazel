@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "LayerStack.hpp"
 
 namespace hazel {

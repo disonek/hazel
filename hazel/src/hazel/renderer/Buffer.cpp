@@ -1,5 +1,3 @@
-//#include "hzpch.h"
-
 #include "Buffer.hpp"
 #include "Renderer.hpp"
 

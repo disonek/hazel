@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "VertexArray.hpp"
 
 #include "Renderer.hpp"
