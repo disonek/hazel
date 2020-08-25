@@ -2,7 +2,7 @@ cmake_minimum_required (VERSION 3.13)
 
 project(hazel)
 set(CMAKE_BUILD_TYPE=Debug)
-# include(cmake/PrecompiledHeader.cmake)
+
 add_library(hazel STATIC
     hazel/src/hazel/Application.cpp
     hazel/src/hazel/Application.hpp
@@ -84,13 +84,13 @@ add_compile_definitions(
 target_precompile_headers(hazel
     PUBLIC
     hazel/src/hzpch.h
-  )
+ )
 
-# target_compile_options(hazel
-#    PUBLIC
-#     -g -Wall
-#    PRIVATE
-#     -fPIC)
+ target_compile_options(hazel
+    PUBLIC
+     -g -Wall
+    PRIVATE
+     -fPIC)
 
 target_link_libraries(hazel
     PUBLIC
@@ -116,27 +116,11 @@ target_include_directories(hazel
         hazel/src
     )
     
-    add_executable(sandbox
-        sandbox/src/Sandbox.cpp
-    )
-    
-    target_link_libraries(sandbox
+ add_executable(sandbox
+     sandbox/src/Sandbox.cpp
+ )
+ 
+ target_link_libraries(sandbox
     PUBLIC
         hazel
-        # GLFW
-    )
-    # set_property(TARGET sandbox PROPERTY
-    #          MSVC_RUNTIME_LIBRARY "MultiThreadedDebug")
-    
-    # target_include_directories(sandbox
-	#     PUBLIC
-    # )
-
-	# includedirs
-	# {
-	# 	"hazel/vendor/spdlog/include",
-	# 	"hazel/src",
-	# 	"hazel/vendor",
-	# 	"%{IncludeDir.glm}"
-	# }
-
+ )

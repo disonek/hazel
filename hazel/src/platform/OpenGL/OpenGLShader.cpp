@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "OpenGLShader.hpp"
 
 #include <fstream>

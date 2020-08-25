@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "Texture.hpp"
 
 #include "Renderer.hpp"

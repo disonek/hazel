@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "RenderCommand.hpp"
 
 #include "platform/OpenGL/OpenGLRendererAPI.hpp"

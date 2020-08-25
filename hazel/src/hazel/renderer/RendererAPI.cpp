@@ -1,4 +1,3 @@
-//#include "hzpch.h"
 #include "RendererAPI.hpp"
 
 namespace hazel {
