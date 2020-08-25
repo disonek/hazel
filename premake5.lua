@@ -33,7 +33,7 @@ project "hazel"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}")
 	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
 
-	pchheader "hzpch.hpp"
+	pchheader "hzpch.h"
 	pchsource "hazel/src/hzpch.cpp"
 
 	files

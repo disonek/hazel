@@ -1,4 +1,4 @@
-#include "hzpch.hpp"
+//#include "hzpch.h"
 #include "Renderer.hpp"
 
 #include "platform/OpenGL/OpenGLShader.hpp"

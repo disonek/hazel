@@ -8,7 +8,7 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "wprowadź nazwę programu, na przykład ${workspaceFolder}/a.exe",
+            "program": "${workspaceFolder}/build_win/Debug/sandbox.exe",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
