@@ -3,11 +3,11 @@
 	url = https://github.com/gabime/spdlog
 [submodule "hazel/vendor/GLFW"]
 	path = hazel/vendor/GLFW
-	url = https://github.com/TheCherno/GLFW
+	url =  https://github.com/disonek/glfw
 [submodule "hazel/vendor/imgui"]
 	path = hazel/vendor/imgui
 	url = https://github.com/TheCherno/imgui
 	ignore = dirty
-[submodule ".\\hazel\\vendor\\glm"]
-	path = .\\hazel\\vendor\\glm
+[submodule "hazel/vendor/glm"]
+	path = hazel/vendor/glm
 	url = https://github.com/g-truc/glm
