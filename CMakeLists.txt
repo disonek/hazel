@@ -44,7 +44,6 @@ add_library(hazel STATIC
     hazel/src/hazel/renderer/VertexArray.hpp
     hazel/src/hazel/Window.hpp
     hazel/src/Hazel.hpp
-    hazel/src/platform/OpenGL
     hazel/src/platform/OpenGL/OpenGLBuffer.cpp
     hazel/src/platform/OpenGL/OpenGLBuffer.hpp
     hazel/src/platform/OpenGL/OpenGLContext.cpp
@@ -108,12 +107,9 @@ target_compile_features(hazel
 
 target_include_directories(hazel
 	PUBLIC
-		hazel/vendor/GLFW/include
-		hazel/vendor/Glad/include
-		hazel/vendor/imgui
-		hazel/vendor/glm
-        hazel/vendor/stb_image
         hazel/src
+    PRIVATE
+        hazel/vendor/stb_image
     )
     
  add_executable(sandbox
