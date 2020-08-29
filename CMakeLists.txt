@@ -101,7 +101,7 @@ target_link_libraries(hazel
     )
 
 target_compile_features(hazel
-    PUBLIC
+    PRIVATE
 		cxx_std_17
 	)
 
