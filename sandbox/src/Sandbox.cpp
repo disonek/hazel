@@ -12,8 +12,7 @@ class ExampleLayer : public hazel::Layer
 public:
 	ExampleLayer()
 		: Layer("Example")
-		, m_Camera(-1.6f, 1.6f, -0.9f, 0.9f)
-		, m_CameraPosition(0.0f)
+		, m_CameraController(1280.0f / 720.0f)
 	{
 		m_VertexArray.reset(hazel::VertexArray::Create());
 
@@ -138,28 +137,15 @@ public:
 
 	void OnUpdate(hazel::Timestep ts) override
 	{
-		if (hazel::Input::IsKeyPressed(HZ_KEY_LEFT))
-			m_CameraPosition.x -= m_CameraMoveSpeed * ts;
-		else if (hazel::Input::IsKeyPressed(HZ_KEY_RIGHT))
-			m_CameraPosition.x += m_CameraMoveSpeed * ts;
 
-		if (hazel::Input::IsKeyPressed(HZ_KEY_UP))
-			m_CameraPosition.y += m_CameraMoveSpeed * ts;
-		else if (hazel::Input::IsKeyPressed(HZ_KEY_DOWN))
-			m_CameraPosition.y -= m_CameraMoveSpeed * ts;
+		// Update
+		m_CameraController.OnUpdate(ts);
 
-		if (hazel::Input::IsKeyPressed(HZ_KEY_A))
-			m_CameraRotation += m_CameraRotationSpeed * ts;
-		if (hazel::Input::IsKeyPressed(HZ_KEY_D))
-			m_CameraRotation -= m_CameraRotationSpeed * ts;
-
+		// Render
 		hazel::RenderCommand::SetClearColor({ 0.1f, 0.1f, 0.1f, 1 });
 		hazel::RenderCommand::Clear();
 
-		m_Camera.SetPosition(m_CameraPosition);
-		m_Camera.SetRotation(m_CameraRotation);
-
-		hazel::Renderer::BeginScene(m_Camera);
+		hazel::Renderer::BeginScene(m_CameraController.GetCamera());
 
 		glm::mat4 scale = glm::scale(glm::mat4(1.0f), glm::vec3(0.1f));
 
@@ -199,7 +185,9 @@ public:
 
 	void OnEvent(hazel::Event& event) override
 	{
+		m_CameraController.OnEvent(event);
 	}
+
 private:
 	hazel::ShaderLibrary m_ShaderLibrary;
 	hazel::Ref<hazel::Shader> m_Shader;
@@ -211,12 +199,7 @@ private:
 	hazel::Ref<hazel::Texture2D> m_Texture;
 	hazel::Ref<hazel::Texture2D> m_ChernoLogoTexture;
 
-	hazel::OrthographicCamera m_Camera;
-	glm::vec3 m_CameraPosition;
-	float m_CameraMoveSpeed = 5.0f;
-
-	float m_CameraRotation = 0.0f;
-	float m_CameraRotationSpeed = 180.0f;
+	hazel::OrthographicCameraController m_CameraController;
 
 	glm::vec3 m_SquareColor = { 0.2f, 0.3f, 0.8f };
 };

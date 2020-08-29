@@ -9,6 +9,7 @@
 #include "hazel/Input.hpp"
 #include "hazel/KeyCodes.hpp"
 #include "hazel/MouseButtonCodes.hpp"
+#include "hazel/OrthographicCameraController.hpp"
 
 #include "hazel/renderer/Renderer.hpp"
 #include "hazel/renderer/RenderCommand.hpp"
