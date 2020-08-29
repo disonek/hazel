@@ -1,11 +1,5 @@
-**/bin/
-!vendor/bin/premake/
-bin_int/
-bin-int/
 build_win/
 build_lin/
 *.log
 
 .vs/
-sandbox/imgui.ini
-imgui.ini
