@@ -1,12 +1,16 @@
 [submodule "hazel/vendor/spdlog"]
 	path = hazel/vendor/spdlog
 	url = https://github.com/gabime/spdlog
+	branch = v1.x
 [submodule "hazel/vendor/GLFW"]
 	path = hazel/vendor/GLFW
 	url =  https://github.com/disonek/glfw
+	branch = master
 [submodule "hazel/vendor/imgui"]
 	path = hazel/vendor/imgui
 	url = https://github.com/disonek/imgui
+	branch = docking
 [submodule "hazel/vendor/glm"]
 	path = hazel/vendor/glm
 	url = https://github.com/g-truc/glm
+	branch = master
