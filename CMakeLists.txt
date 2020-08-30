@@ -4,11 +4,11 @@ project(hazel)
 set(CMAKE_BUILD_TYPE=Debug)
 
 add_library(hazel STATIC
-    hazel/src/hazel/Application.cpp
-    hazel/src/hazel/Application.hpp
+    hazel/src/hazel/core/Application.cpp
+    hazel/src/hazel/core/Application.hpp
     hazel/src/hazel/core/Timestep.hpp
-    hazel/src/hazel/Core.hpp
-    hazel/src/hazel/EntryPoint.hpp
+    hazel/src/hazel/core/Core.hpp
+    hazel/src/hazel/core/EntryPoint.hpp
     hazel/src/hazel/events/ApplicationEvent.hpp
     hazel/src/hazel/events/Event.hpp
     hazel/src/hazel/events/KeyEvent.hpp
@@ -16,17 +16,17 @@ add_library(hazel STATIC
     hazel/src/hazel/ImGui/ImGuiBuild.cpp
     hazel/src/hazel/ImGui/ImGuiLayer.cpp
     hazel/src/hazel/ImGui/ImGuiLayer.hpp
-    hazel/src/hazel/Input.hpp
-    hazel/src/hazel/KeyCodes.hpp
-    hazel/src/hazel/Layer.cpp
-    hazel/src/hazel/Layer.hpp
-    hazel/src/hazel/LayerStack.cpp
-    hazel/src/hazel/LayerStack.hpp
-    hazel/src/hazel/Log.cpp
-    hazel/src/hazel/Log.hpp
-    hazel/src/hazel/MouseButtonCodes.hpp
-    hazel/src/hazel/OrthographicCameraController.cpp 
-    hazel/src/hazel/OrthographicCameraController.hpp
+    hazel/src/hazel/core/Input.hpp
+    hazel/src/hazel/core/KeyCodes.hpp
+    hazel/src/hazel/core/Layer.cpp
+    hazel/src/hazel/core/Layer.hpp
+    hazel/src/hazel/core/LayerStack.cpp
+    hazel/src/hazel/core/LayerStack.hpp
+    hazel/src/hazel/core/Log.cpp
+    hazel/src/hazel/core/Log.hpp
+    hazel/src/hazel/core/MouseButtonCodes.hpp
+    hazel/src/hazel/renderer/OrthographicCameraController.cpp 
+    hazel/src/hazel/renderer/OrthographicCameraController.hpp
     hazel/src/hazel/renderer/Buffer.cpp
     hazel/src/hazel/renderer/Buffer.hpp
     hazel/src/hazel/renderer/GraphicsContext.hpp
@@ -44,7 +44,7 @@ add_library(hazel STATIC
     hazel/src/hazel/renderer/Texture.hpp
     hazel/src/hazel/renderer/VertexArray.cpp
     hazel/src/hazel/renderer/VertexArray.hpp
-    hazel/src/hazel/Window.hpp
+    hazel/src/hazel/core/Window.hpp
     hazel/src/Hazel.hpp
     hazel/src/platform/OpenGL/OpenGLBuffer.cpp
     hazel/src/platform/OpenGL/OpenGLBuffer.hpp

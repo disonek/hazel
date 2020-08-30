@@ -1,5 +1,5 @@
 #include "Application.hpp"
-#include "hazel/Log.hpp"
+#include "hazel/core/Log.hpp"
 
 #include "hazel/renderer/Renderer.hpp"
 

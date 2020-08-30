@@ -4,7 +4,7 @@
 #include "Window.hpp"
 #include "hazel/events/ApplicationEvent.hpp"
 #include "hazel/events/Event.hpp"
-#include "hazel/LayerStack.hpp"
+#include "hazel/core/LayerStack.hpp"
 
 #include "hazel/core/Timestep.hpp"
 
