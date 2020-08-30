@@ -20,5 +20,3 @@
 #include "hazel/renderer/OrthographicCamera.hpp"
 
 #include "hazel/ImGui/ImGuiLayer.hpp"
-
-#include "hazel/core/EntryPoint.hpp"

@@ -115,8 +115,10 @@ target_include_directories(hazel
     )
     
  add_executable(sandbox
-     sandbox/src/Sandbox.cpp
- )
+    sandbox/src/SandboxApp.cpp
+    sandbox/src/Sandbox2D.hpp
+    sandbox/src/Sandbox2D.cpp
+    )
  
  target_link_libraries(sandbox
     PUBLIC

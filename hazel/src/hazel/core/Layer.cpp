@@ -6,10 +6,4 @@ namespace hazel {
 		: m_DebugName(debugName)
 	{
 	}
-
-	Layer::~Layer()
-	{
-
-	}
-
 }
