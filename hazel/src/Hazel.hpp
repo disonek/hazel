@@ -12,6 +12,7 @@
 #include "hazel/renderer/OrthographicCameraController.hpp"
 
 #include "hazel/renderer/Renderer.hpp"
+#include "hazel/renderer/Renderer2D.hpp"
 #include "hazel/renderer/RenderCommand.hpp"
 #include "hazel/renderer/Buffer.hpp"
 #include "hazel/renderer/Shader.hpp"

@@ -4,6 +4,9 @@ project(hazel)
 set(CMAKE_BUILD_TYPE=Debug)
 
 add_library(hazel STATIC
+    hazel/src/Hazel.hpp
+    hazel/src/hzpch.cpp
+    hazel/src/hzpch.h
     hazel/src/hazel/core/Application.cpp
     hazel/src/hazel/core/Application.hpp
     hazel/src/hazel/core/Timestep.hpp
@@ -25,6 +28,7 @@ add_library(hazel STATIC
     hazel/src/hazel/core/Log.cpp
     hazel/src/hazel/core/Log.hpp
     hazel/src/hazel/core/MouseButtonCodes.hpp
+    hazel/src/hazel/core/Window.hpp
     hazel/src/hazel/renderer/OrthographicCameraController.cpp 
     hazel/src/hazel/renderer/OrthographicCameraController.hpp
     hazel/src/hazel/renderer/Buffer.cpp
@@ -44,8 +48,8 @@ add_library(hazel STATIC
     hazel/src/hazel/renderer/Texture.hpp
     hazel/src/hazel/renderer/VertexArray.cpp
     hazel/src/hazel/renderer/VertexArray.hpp
-    hazel/src/hazel/core/Window.hpp
-    hazel/src/Hazel.hpp
+    hazel/src/hazel/renderer/Renderer2D.cpp
+    hazel/src/hazel/renderer/Renderer2D.hpp
     hazel/src/platform/OpenGL/OpenGLBuffer.cpp
     hazel/src/platform/OpenGL/OpenGLBuffer.hpp
     hazel/src/platform/OpenGL/OpenGLContext.cpp
@@ -62,8 +66,6 @@ add_library(hazel STATIC
     hazel/src/platform/windows/WindowsInput.hpp
     hazel/src/platform/windows/WindowsWindow.cpp
     hazel/src/platform/windows/WindowsWindow.hpp
-    hazel/src/hzpch.cpp
-    hazel/src/hzpch.h
 	hazel/vendor/stb_image/stb_image.hpp
 	hazel/vendor/stb_image/stb_image.cpp
     )
