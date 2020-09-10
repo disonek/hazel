@@ -128,4 +128,5 @@ target_include_directories(hazel
  )
 
  file(COPY sandbox/assets DESTINATION ${CMAKE_BINARY_DIR})
+ file(COPY sandbox/assets DESTINATION ${CMAKE_BINARY_DIR}/Debug)
 

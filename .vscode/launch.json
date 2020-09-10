@@ -11,7 +11,7 @@
             "program": "${workspaceFolder}/build_win/Debug/sandbox.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/build_win/Debug",
             "environment": [],
             "externalConsole": false
         }
