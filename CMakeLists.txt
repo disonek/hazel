@@ -1,7 +1,6 @@
 cmake_minimum_required (VERSION 3.13)
 
 project(hazel)
-set(CMAKE_BUILD_TYPE=Debug)
 
 add_library(hazel STATIC
     hazel/src/Hazel.hpp
@@ -89,13 +88,7 @@ target_precompile_headers(hazel
     hazel/src/hzpch.h
  )
 
- target_compile_options(hazel
-    PUBLIC
-     -g -Wall
-    PRIVATE
-     -fPIC)
-
-target_link_libraries(hazel
+ target_link_libraries(hazel
     PUBLIC
         glm
         glfw
@@ -110,9 +103,10 @@ target_compile_features(hazel
 	)
 
 target_include_directories(hazel
-	PUBLIC
+    PUBLIC
         hazel/src
     PRIVATE
+        hazel/src/hazel
         hazel/vendor/stb_image
     )
     
