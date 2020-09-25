@@ -76,6 +76,7 @@ target_compile_definitions(hazel
         HZ_PLATFORM_WINDOWS=1
         GLFW_INCLUDE_NONE=1
         _CRT_SECURE_NO_WARNINGS=1
+        HZ_ENABLE_ASSERTS=1
     )
 
 target_precompile_headers(hazel
@@ -85,7 +86,7 @@ target_precompile_headers(hazel
 
  target_link_libraries(hazel
     PUBLIC
-        glm
+        glm::glm
         glfw
         Glad
         imgui
