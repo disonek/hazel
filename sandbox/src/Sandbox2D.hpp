@@ -14,12 +14,6 @@ public:
     void OnImGuiRender() override;
     void OnEvent(hazel::Event& e) override;
 
-    struct ProfileResult
-    {
-        const char* Name;
-        float Time;
-    };
-
 private:
     hazel::OrthographicCameraController m_CameraController;
 
@@ -28,8 +22,6 @@ private:
     hazel::Ref<hazel::Shader> m_FlatColorShader;
 
     hazel::Ref<hazel::Texture2D> m_CheckerboardTexture;
-
-    std::vector<ProfileResult> m_ProfileResults;
 
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
 };

@@ -24,6 +24,7 @@ add_library(hazel STATIC
     src/hazel/core/Log.hpp
     src/hazel/core/MouseButtonCodes.hpp
     src/hazel/core/Window.hpp
+    src/hazel/debug/Instrumentor.hpp
     src/hazel/renderer/OrthographicCameraController.cpp 
     src/hazel/renderer/OrthographicCameraController.hpp
     src/hazel/renderer/Buffer.cpp
