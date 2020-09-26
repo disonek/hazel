@@ -1,50 +1,52 @@
 #pragma once
 
-#include "Core.hpp"
-#include "Window.hpp"
+#include "hazel/ImGui/ImGuiLayer.hpp"
+#include "hazel/core/Core.hpp"
+#include "hazel/core/LayerStack.hpp"
+#include "hazel/core/Timestep.hpp"
+#include "hazel/core/Window.hpp"
 #include "hazel/events/ApplicationEvent.hpp"
 #include "hazel/events/Event.hpp"
-#include "hazel/core/LayerStack.hpp"
 
-#include "hazel/core/Timestep.hpp"
-
-#include "hazel/ImGui/ImGuiLayer.hpp"
-
-
-namespace hazel
-{
+namespace hazel {
 
 class Application
 {
 public:
-	Application();
-	virtual ~Application();
+    Application();
+    virtual ~Application();
 
-	void run();
+    void run();
 
-	void OnEvent(Event& e);
+    void OnEvent(Event& e);
 
-	void PushLayer(Layer* layer);
-	void PushOverlay(Layer* layer);
+    void PushLayer(Layer* layer);
+    void PushOverlay(Layer* layer);
 
-	inline static Application& Get() { return *s_Instance; }
-	inline Window& GetWindow() { return *m_Window; }
-private:
-	bool OnWnidowClose(WindowCloseEvent& e);
-	bool OnWindowResize(WindowResizeEvent& e);
-
-	Scope<Window> m_Window;
-	ImGuiLayer* m_ImGuiLayer;
-	bool m_Running = true;
-	bool m_Minimized = false;
-	LayerStack m_LayerStack;
-	float m_LastFrameTime = 0.0f;
+    inline static Application& Get()
+    {
+        return *s_Instance;
+    }
+    inline Window& GetWindow()
+    {
+        return *m_Window;
+    }
 
 private:
-	static Application* s_Instance;
+    bool OnWnidowClose(WindowCloseEvent& e);
+    bool OnWindowResize(WindowResizeEvent& e);
+
+    Scope<Window> m_Window;
+    ImGuiLayer* m_ImGuiLayer;
+    bool m_Running = true;
+    bool m_Minimized = false;
+    LayerStack m_LayerStack;
+    float m_LastFrameTime = 0.0f;
+
+private:
+    static Application* s_Instance;
 };
 
-//To be defined in client;
+// To be defined in client;
 Application* CreateApplication();
-}
-
+} // namespace hazel

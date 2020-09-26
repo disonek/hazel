@@ -7,12 +7,6 @@
 #error Hazel only supports Windows!
 #endif
 
-#define HAZEL_API
-
-#ifdef HZ_DEBUG
-#define HZ_ENABLE_ASSERTS
-#endif
-
 #ifdef HZ_ENABLE_ASSERTS
 #define HZ_ASSERT(x, ...)                                   \
     {                                                       \

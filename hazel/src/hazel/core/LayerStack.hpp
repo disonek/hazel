@@ -5,13 +5,12 @@
 #include "Layer.hpp"
 #include "hazel/core/Core.hpp"
 
-
 namespace hazel {
 
 class LayerStack
 {
 public:
-    LayerStack();
+    LayerStack() = default;
     ~LayerStack();
 
     void PushLayer(Layer* layer);

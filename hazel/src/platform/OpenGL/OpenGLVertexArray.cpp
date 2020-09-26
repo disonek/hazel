@@ -8,27 +8,27 @@ static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
 {
     switch(type)
     {
-        case hazel::ShaderDataType::Float:
+        case ShaderDataType::Float:
             return GL_FLOAT;
-        case hazel::ShaderDataType::Float2:
+        case ShaderDataType::Float2:
             return GL_FLOAT;
-        case hazel::ShaderDataType::Float3:
+        case ShaderDataType::Float3:
             return GL_FLOAT;
-        case hazel::ShaderDataType::Float4:
+        case ShaderDataType::Float4:
             return GL_FLOAT;
-        case hazel::ShaderDataType::Mat3:
+        case ShaderDataType::Mat3:
             return GL_FLOAT;
-        case hazel::ShaderDataType::Mat4:
+        case ShaderDataType::Mat4:
             return GL_FLOAT;
-        case hazel::ShaderDataType::Int:
+        case ShaderDataType::Int:
             return GL_INT;
-        case hazel::ShaderDataType::Int2:
+        case ShaderDataType::Int2:
             return GL_INT;
-        case hazel::ShaderDataType::Int3:
+        case ShaderDataType::Int3:
             return GL_INT;
-        case hazel::ShaderDataType::Int4:
+        case ShaderDataType::Int4:
             return GL_INT;
-        case hazel::ShaderDataType::Bool:
+        case ShaderDataType::Bool:
             return GL_BOOL;
     }
 

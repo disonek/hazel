@@ -1,24 +1,23 @@
-#include "hazel/renderer/RendererAPI.hpp"
+#include "hazel/renderer/GraphicsContext.hpp"
 
-#include "platform/OpenGL/OpenGLRendererAPI.hpp"
+#include "hazel/renderer/Renderer.hpp"
+#include "platform/OpenGL/OpenGLContext.hpp"
 
 namespace hazel {
 
-Scope<RendererAPI> RendererAPI::Create()
+Scope<GraphicsContext> GraphicsContext::Create(void* window)
 {
-    switch(s_API)
+    switch(Renderer::GetAPI())
     {
         case RendererAPI::API::None:
             HZ_CORE_ASSERT(false, "RendererAPI::None is currently not supported!");
             return nullptr;
         case RendererAPI::API::OpenGL:
-            return CreateScope<OpenGLRendererAPI>();
+            return CreateScope<OpenGLContext>(static_cast<GLFWwindow*>(window));
     }
 
     HZ_CORE_ASSERT(false, "Unknown RendererAPI!");
     return nullptr;
 }
-
-RendererAPI::API RendererAPI::s_API = RendererAPI::API::OpenGL;
 
 } // namespace hazel

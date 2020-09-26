@@ -1,7 +1,8 @@
 #pragma once
 
-#ifdef HZ_PLATFORM_WINDOWS
+#include "hazel/core/Core.hpp"
 
+#ifdef HZ_PLATFORM_WINDOWS
 extern hazel::Application* hazel::CreateApplication();
 
 int main(int /*argc*/, char** /*argv*/)

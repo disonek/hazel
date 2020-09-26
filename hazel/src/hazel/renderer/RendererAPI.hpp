@@ -2,8 +2,7 @@
 
 #include <glm/glm.hpp>
 
-#include "VertexArray.hpp"
-
+#include "hazel/renderer/VertexArray.hpp"
 
 namespace hazel {
 
@@ -28,6 +27,8 @@ public:
     {
         return s_API;
     }
+
+    static Scope<RendererAPI> Create();
 
 private:
     static API s_API;

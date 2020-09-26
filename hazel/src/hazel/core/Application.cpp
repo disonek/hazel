@@ -2,14 +2,11 @@
 
 #include <glfw/glfw3.h>
 
-#include "Input.hpp"
+#include "hazel/core/Input.hpp"
 #include "hazel/core/Log.hpp"
 #include "hazel/renderer/Renderer.hpp"
 
-
 namespace hazel {
-
-#define BIND_EVENT_FN(x) std::bind(&Application::x, this, std::placeholders::_1)
 
 Application* Application::s_Instance = nullptr;
 
@@ -18,8 +15,8 @@ Application::Application()
     HZ_CORE_ASSERT(!s_Instance, "Application already exists!");
     s_Instance = this;
 
-    m_Window = Scope<Window>(Window::Create());
-    m_Window->SetEventCallback(BIND_EVENT_FN(OnEvent));
+    m_Window = Window::Create();
+    m_Window->SetEventCallback(HZ_BIND_EVENT_FN(Application::OnEvent));
 
     Renderer::Init();
 
@@ -27,13 +24,16 @@ Application::Application()
     PushOverlay(m_ImGuiLayer);
 }
 
-Application::~Application() {}
+Application::~Application()
+{
+    Renderer::ShutDown();
+}
 
 void Application::OnEvent(Event& e)
 {
     EventDispatcher dispatcher(e);
-    dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWnidowClose));
-    dispatcher.Dispatch<WindowResizeEvent>(BIND_EVENT_FN(OnWindowResize));
+    dispatcher.Dispatch<WindowCloseEvent>(HZ_BIND_EVENT_FN(Application::OnWnidowClose));
+    dispatcher.Dispatch<WindowResizeEvent>(HZ_BIND_EVENT_FN(Application::OnWindowResize));
 
     for(auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
     {
