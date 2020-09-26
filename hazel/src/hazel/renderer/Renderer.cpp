@@ -8,6 +8,8 @@ Scope<Renderer::SceneData> Renderer::s_SceneData = CreateScope<Renderer::SceneDa
 
 void Renderer::Init()
 {
+    HZ_PROFILE_FUNCTION();
+
     RenderCommand::Init();
     Renderer2D::Init();
 }
