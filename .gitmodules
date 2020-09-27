@@ -4,7 +4,7 @@
 	branch = v1.x
 [submodule "hazel/vendor/GLFW"]
 	path = hazel/vendor/GLFW
-	url =  https://github.com/disonek/glfw
+	url =  https://github.com/glfw/glfw
 	branch = master
 [submodule "hazel/vendor/imgui"]
 	path = hazel/vendor/imgui

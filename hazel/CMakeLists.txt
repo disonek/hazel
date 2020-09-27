@@ -1,4 +1,4 @@
-add_library(hazel STATIC
+add_library(hazel
     src/Hazel.hpp
     src/hzpch.cpp
     src/hzpch.h
