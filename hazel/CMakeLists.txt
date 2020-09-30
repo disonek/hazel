@@ -14,6 +14,7 @@ add_library(hazel
     src/hazel/ImGui/ImGuiBuild.cpp
     src/hazel/ImGui/ImGuiLayer.cpp
     src/hazel/ImGui/ImGuiLayer.hpp
+    src/hazel/core/Input.cpp
     src/hazel/core/Input.hpp
     src/hazel/core/KeyCodes.hpp
     src/hazel/core/Layer.cpp
@@ -23,6 +24,7 @@ add_library(hazel
     src/hazel/core/Log.cpp
     src/hazel/core/Log.hpp
     src/hazel/core/MouseCodes.hpp
+    src/hazel/core/Window.cpp
     src/hazel/core/Window.hpp
     src/hazel/debug/Instrumentor.hpp
     src/hazel/renderer/OrthographicCameraController.cpp 
