@@ -8,6 +8,7 @@
 #include "hazel/events/ApplicationEvent.hpp"
 #include "hazel/events/Event.hpp"
 
+int main(int argc, char** argv);
 namespace hazel {
 
 class Application
@@ -15,8 +16,6 @@ class Application
 public:
     Application();
     virtual ~Application();
-
-    void run();
 
     void OnEvent(Event& e);
 
@@ -33,6 +32,7 @@ public:
     }
 
 private:
+    void run();
     bool OnWnidowClose(WindowCloseEvent& e);
     bool OnWindowResize(WindowResizeEvent& e);
 
@@ -45,6 +45,7 @@ private:
 
 private:
     static Application* s_Instance;
+    friend int ::main(int argc, char** argv);
 };
 
 // To be defined in client;

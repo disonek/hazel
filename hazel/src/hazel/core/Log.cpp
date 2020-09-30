@@ -1,19 +1,29 @@
 #include "Log.hpp"
 
-#include "spdlog/sinks/stdout_color_sinks.h"
+#include <spdlog/sinks/basic_file_sink.h>
+#include <spdlog/sinks/stdout_color_sinks.h>
 
-namespace hazel
+namespace hazel {
+std::shared_ptr<spdlog::logger> Log::coreLogger;
+std::shared_ptr<spdlog::logger> Log::clientLogger;
+
+void Log::init()
 {
-	std::shared_ptr<spdlog::logger> Log::coreLogger;
-	std::shared_ptr<spdlog::logger> Log::clientLogger;
+    std::vector<spdlog::sink_ptr> logSinks;
+    logSinks.emplace_back(std::make_shared<spdlog::sinks::stdout_color_sink_mt>());
+    logSinks.emplace_back(std::make_shared<spdlog::sinks::basic_file_sink_mt>("Hazel.log", true));
 
-	void Log::init()
-	{
-		spdlog::set_pattern("%^[%T] %n: %v%$");
-		coreLogger = spdlog::stdout_color_mt("HAZEL");
-		coreLogger->set_level(spdlog::level::trace);
+    logSinks[0]->set_pattern("%^[%T] %n: %v%$");
+    logSinks[1]->set_pattern("[%T] [%l] %n: %v");
 
-		clientLogger = spdlog::stdout_color_mt("APP");
-		clientLogger->set_level(spdlog::level::trace);
-	}
+    coreLogger = std::make_shared<spdlog::logger>("HAZEL", begin(logSinks), end(logSinks));
+    spdlog::register_logger(coreLogger);
+    coreLogger->set_level(spdlog::level::trace);
+    coreLogger->flush_on(spdlog::level::trace);
+
+    clientLogger = std::make_shared<spdlog::logger>("APP", begin(logSinks), end(logSinks));
+    spdlog::register_logger(clientLogger);
+    clientLogger->set_level(spdlog::level::trace);
+    clientLogger->flush_on(spdlog::level::trace);
 }
+} // namespace hazel
