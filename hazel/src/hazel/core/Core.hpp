@@ -7,7 +7,7 @@
 #error Hazel only supports Windows!
 #endif
 
-#ifdef HZ_ENABLE_ASSERTS
+#ifdef HZ_DEBUG
 #define HZ_ASSERT(x, ...)                                   \
     {                                                       \
         if(!(x))                                            \

@@ -9,7 +9,7 @@
 #include "hazel/core/KeyCodes.hpp"
 #include "hazel/core/Layer.hpp"
 #include "hazel/core/Log.hpp"
-#include "hazel/core/MouseButtonCodes.hpp"
+#include "hazel/core/MouseCodes.hpp"
 #include "hazel/renderer/Buffer.hpp"
 #include "hazel/renderer/OrthographicCamera.hpp"
 #include "hazel/renderer/OrthographicCameraController.hpp"

@@ -22,7 +22,7 @@ add_library(hazel
     src/hazel/core/LayerStack.hpp
     src/hazel/core/Log.cpp
     src/hazel/core/Log.hpp
-    src/hazel/core/MouseButtonCodes.hpp
+    src/hazel/core/MouseCodes.hpp
     src/hazel/core/Window.hpp
     src/hazel/debug/Instrumentor.hpp
     src/hazel/renderer/OrthographicCameraController.cpp 
@@ -75,6 +75,7 @@ add_subdirectory(vendor/spdlog)
 	
 target_compile_definitions(hazel
     PUBLIC 	
+        HZ_DEBUG=1
         HZ_PLATFORM_WINDOWS=1
         GLFW_INCLUDE_NONE=1
         _CRT_SECURE_NO_WARNINGS=1
