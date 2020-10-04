@@ -8,10 +8,10 @@
             "name": "(Windows) Launch",
             "type": "cppvsdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build_win/Debug/sandbox.exe",
+            "program": "${workspaceFolder}/build/bin/sandbox.exe",
             "args": [],
             "stopAtEntry": false,
-            "cwd": "${workspaceFolder}/build_win/Debug",
+            "cwd": "${workspaceFolder}/build/bin",
             "environment": [],
             "externalConsole": false
         }
