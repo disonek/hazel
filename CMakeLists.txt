@@ -10,7 +10,9 @@ add_library(project_options INTERFACE)
 target_compile_features(project_options INTERFACE cxx_std_17)
 
 if(CMAKE_CXX_COMPILER_ID MATCHES ".*Clang")
-  option(ENABLE_BUILD_WITH_TIME_TRACE "Enable -ftime-trace to generate time tracing .json files on clang" OFF)
+  option(ENABLE_BUILD_WITH_TIME_TRACE
+         "Enable -ftime-trace to generate time tracing .json files on clang"
+         OFF)
   if(ENABLE_BUILD_WITH_TIME_TRACE)
     add_compile_definitions(project_options INTERFACE -ftime-trace)
   endif()
@@ -43,13 +45,8 @@ option(ENABLE_TESTING "Enable Test Builds" OFF)
 # Very basic PCH example
 option(ENABLE_PCH "Enable Precompiled Headers" OFF)
 if(ENABLE_PCH)
-  target_precompile_headers(
-    project_options
-    INTERFACE
-    <vector>
-    <string>
-    <map>
-    <utility>)
+  target_precompile_headers(project_options INTERFACE <vector> <string> <map>
+                            <utility>)
 endif()
 
 # Set up some extra Conan dependencies based on our needs before loading Conan
@@ -63,7 +60,9 @@ find_package(Threads REQUIRED)
 
 if(ENABLE_TESTING)
   enable_testing()
-  message("Building Tests. Be sure to check out test/constexpr_tests for constexpr testing")
+  message(
+    "Building Tests. Be sure to check out test/constexpr_tests for constexpr testing"
+  )
   # add_subdirectory(test)
 endif()
 
