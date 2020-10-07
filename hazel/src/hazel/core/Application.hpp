@@ -22,11 +22,11 @@ public:
     void PushLayer(Layer* layer);
     void PushOverlay(Layer* layer);
 
-    inline static Application& Get()
+    static Application& Get()
     {
         return *s_Instance;
     }
-    inline Window& GetWindow()
+    Window& GetWindow()
     {
         return *m_Window;
     }

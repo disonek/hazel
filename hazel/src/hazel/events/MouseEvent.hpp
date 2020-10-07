@@ -14,11 +14,11 @@ public:
     {
     }
 
-    inline float GetX() const
+    float GetX() const
     {
         return m_MouseX;
     }
-    inline float GetY() const
+    float GetY() const
     {
         return m_MouseY;
     }
@@ -45,11 +45,11 @@ public:
     {
     }
 
-    inline float GetXOffset() const
+    float GetXOffset() const
     {
         return m_XOffset;
     }
-    inline float GetYOffset() const
+    float GetYOffset() const
     {
         return m_YOffset;
     }
@@ -70,7 +70,7 @@ private:
 class MouseButtonEvent : public Event
 {
 public:
-    inline MouseCode GetMouseButton() const
+    MouseCode GetMouseButton() const
     {
         return m_Button;
     }

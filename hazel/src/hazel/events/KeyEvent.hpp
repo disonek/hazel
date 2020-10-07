@@ -8,7 +8,7 @@ namespace hazel {
 class KeyEvent : public Event
 {
 public:
-    inline KeyCode GetKeyCode() const
+    KeyCode GetKeyCode() const
     {
         return m_KeyCode;
     }
@@ -32,7 +32,7 @@ public:
     {
     }
 
-    inline int GetRepeatCount() const
+    int GetRepeatCount() const
     {
         return m_RepeatCount;
     }

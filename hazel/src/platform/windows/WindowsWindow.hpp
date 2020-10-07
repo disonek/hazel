@@ -5,7 +5,6 @@
 #include "hazel/core/Window.hpp"
 #include "hazel/renderer/GraphicsContext.hpp"
 
-
 namespace hazel {
 
 class WindowsWindow : public Window
@@ -16,24 +15,24 @@ public:
 
     void OnUpdate() override;
 
-    inline unsigned int GetWidth() const override
+    unsigned int GetWidth() const override
     {
         return m_Data.Width;
     }
-    inline unsigned int GetHeight() const override
+    unsigned int GetHeight() const override
     {
         return m_Data.Height;
     }
 
     // Window attributes
-    inline void SetEventCallback(const EventCallbackFn& callback) override
+    void SetEventCallback(const EventCallbackFn& callback) override
     {
         m_Data.EventCallback = callback;
     }
     void SetVSync(bool enabled) override;
     bool IsVSync() const override;
 
-    inline virtual void* GetNativeWindow() const
+    virtual void* GetNativeWindow() const
     {
         return m_Window;
     }

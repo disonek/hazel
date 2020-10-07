@@ -13,11 +13,11 @@ public:
     {
     }
 
-    inline unsigned int GetWidth() const
+    unsigned int GetWidth() const
     {
         return m_Width;
     }
-    inline unsigned int GetHeight() const
+    unsigned int GetHeight() const
     {
         return m_Height;
     }
