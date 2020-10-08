@@ -2,7 +2,7 @@
 
 #include <string>
 
-#include "hazel/core/Core.hpp"
+#include "hazel/core/Base.hpp"
 
 namespace hazel {
 

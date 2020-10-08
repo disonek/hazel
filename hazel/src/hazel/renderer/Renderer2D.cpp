@@ -110,6 +110,8 @@ void Renderer2D::Init()
 void Renderer2D::Shutdown()
 {
     HZ_PROFILE_FUNCTION();
+
+    delete[] s_Data.QuadVertexBufferBase;
 }
 
 void Renderer2D::BeginScene(const OrthographicCamera& camera)
@@ -129,7 +131,8 @@ void Renderer2D::EndScene()
 {
     HZ_PROFILE_FUNCTION();
 
-    uint32_t dataSize = (uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase;
+    uint32_t dataSize =
+        static_cast<uint32_t>((uint8_t*)s_Data.QuadVertexBufferPtr - (uint8_t*)s_Data.QuadVertexBufferBase);
     s_Data.QuadVertexBuffer->SetData(s_Data.QuadVertexBufferBase, dataSize);
 
     Flush();
@@ -137,6 +140,9 @@ void Renderer2D::EndScene()
 
 void Renderer2D::Flush()
 {
+    if(s_Data.QuadIndexCount == 0)
+        return; // Nothing to draw
+
     // Bind textures
     for(uint32_t i = 0; i < s_Data.TextureSlotIndex; i++)
         s_Data.TextureSlots[i]->Bind(i);
@@ -214,8 +220,6 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
     if(s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
         FlushAndReset();
 
-    constexpr glm::vec4 color = {1.0f, 1.0f, 1.0f, 1.0f};
-
     float textureIndex = 0.0f;
     for(uint32_t i = 1; i < s_Data.TextureSlotIndex; i++)
     {
@@ -228,6 +232,9 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
 
     if(textureIndex == 0.0f)
     {
+        if(s_Data.TextureSlotIndex >= Renderer2DData::MaxTextureSlots)
+            FlushAndReset();
+
         textureIndex = (float)s_Data.TextureSlotIndex;
         s_Data.TextureSlots[s_Data.TextureSlotIndex] = texture;
         s_Data.TextureSlotIndex++;
@@ -244,7 +251,7 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
     s_Data.QuadVertexBufferPtr -= s_Data.QuadVertexPositions.size();
 
     std::for_each(s_Data.textureCoords.cbegin(), s_Data.textureCoords.cend(), [&](glm::vec2 singleCoord) {
-        s_Data.QuadVertexBufferPtr->Color = color;
+        s_Data.QuadVertexBufferPtr->Color = tintColor;
         s_Data.QuadVertexBufferPtr->TexCoord = singleCoord;
         s_Data.QuadVertexBufferPtr->TexIndex = textureIndex;
         s_Data.QuadVertexBufferPtr->TilingFactor = tilingFactor;
@@ -324,8 +331,6 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position,
     if(s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
         FlushAndReset();
 
-    constexpr glm::vec4 color = {1.0f, 1.0f, 1.0f, 1.0f};
-
     float textureIndex = 0.0f;
     for(uint32_t i = 1; i < s_Data.TextureSlotIndex; i++)
     {
@@ -338,6 +343,9 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position,
 
     if(textureIndex == 0.0f)
     {
+        if(s_Data.TextureSlotIndex >= Renderer2DData::MaxTextureSlots)
+            FlushAndReset();
+
         textureIndex = (float)s_Data.TextureSlotIndex;
         s_Data.TextureSlots[s_Data.TextureSlotIndex] = texture;
         s_Data.TextureSlotIndex++;
@@ -356,7 +364,7 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position,
     s_Data.QuadVertexBufferPtr -= s_Data.QuadVertexPositions.size();
 
     std::for_each(s_Data.textureCoords.cbegin(), s_Data.textureCoords.cend(), [&](glm::vec2 singleCoord) {
-        s_Data.QuadVertexBufferPtr->Color = color;
+        s_Data.QuadVertexBufferPtr->Color = tintColor;
         s_Data.QuadVertexBufferPtr->TexCoord = singleCoord;
         s_Data.QuadVertexBufferPtr->TexIndex = textureIndex;
         s_Data.QuadVertexBufferPtr->TilingFactor = tilingFactor;

@@ -6,7 +6,7 @@ add_library(
   src/hazel/core/Application.cpp
   src/hazel/core/Application.hpp
   src/hazel/core/Timestep.hpp
-  src/hazel/core/Core.hpp
+  src/hazel/core/Base.hpp
   src/hazel/core/EntryPoint.hpp
   src/hazel/events/ApplicationEvent.hpp
   src/hazel/events/Event.hpp

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "hazel/ImGui/ImGuiLayer.hpp"
-#include "hazel/core/Core.hpp"
+#include "hazel/core/Base.hpp"
 #include "hazel/core/LayerStack.hpp"
 #include "hazel/core/Timestep.hpp"
 #include "hazel/core/Window.hpp"

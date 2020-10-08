@@ -1,6 +1,6 @@
 #pragma once
 
-#include "hazel/core/Core.hpp"
+#include "hazel/core/Base.hpp"
 #include "hazel/events/Event.hpp"
 
 namespace hazel {

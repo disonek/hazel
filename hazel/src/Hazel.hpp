@@ -4,7 +4,7 @@
 
 #include "hazel/ImGui/ImGuiLayer.hpp"
 #include "hazel/core/Application.hpp"
-#include "hazel/core/Core.hpp"
+#include "hazel/core/Base.hpp"
 #include "hazel/core/Input.hpp"
 #include "hazel/core/KeyCodes.hpp"
 #include "hazel/core/Layer.hpp"
