@@ -6,5 +6,5 @@ target_link_libraries(
   PUBLIC hazel
   PRIVATE project_warnings project_options)
 
-file(COPY assets DESTINATION ${CMAKE_BINARY_DIR}/bin)
-file(COPY assets DESTINATION ${CMAKE_BINARY_DIR}/bin/Debug)
+file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin/Debug)
