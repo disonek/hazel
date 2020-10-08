@@ -1,39 +1,71 @@
 #pragma once
 
-#include "hazel/Renderer/OrthographicCamera.hpp"
 #include "hazel/Core/Timestep.hpp"
-
 #include "hazel/Events/ApplicationEvent.hpp"
 #include "hazel/Events/MouseEvent.hpp"
+#include "hazel/Renderer/OrthographicCamera.hpp"
 
 namespace hazel {
 
-	class OrthographicCameraController
-	{
-	public:
-		OrthographicCameraController(float aspectRatio, bool rotation = false);
+struct OrthographicCameraBounds
+{
+    float Left, Right;
+    float Bottom, Top;
 
-		void OnUpdate(Timestep ts);
-		void OnEvent(Event& e);
+    float GetWidth()
+    {
+        return Right - Left;
+    }
+    float GetHeight()
+    {
+        return Top - Bottom;
+    }
+};
 
-		OrthographicCamera& GetCamera() { return m_Camera; }
-		const OrthographicCamera& GetCamera() const { return m_Camera; }
-		float GetZoomLevel() const { return m_ZoomLevel; }
-		void SetZoomLevel(float level) { m_ZoomLevel = level; }
+class OrthographicCameraController
+{
+public:
+    OrthographicCameraController(float aspectRatio, bool rotation = false);
 
-	private:
-		bool OnMouseScrolled(MouseScrolledEvent& e);
-		bool OnWindowResized(WindowResizeEvent& e);
+    void OnUpdate(Timestep ts);
+    void OnEvent(Event& e);
 
-		float m_AspectRatio;
-		float m_ZoomLevel = 1.0f;
-		OrthographicCamera m_Camera;
+    OrthographicCamera& GetCamera()
+    {
+        return m_Camera;
+    }
+    const OrthographicCamera& GetCamera() const
+    {
+        return m_Camera;
+    }
+    float GetZoomLevel() const
+    {
+        return m_ZoomLevel;
+    }
+    void SetZoomLevel(float level)
+    {
+        m_ZoomLevel = level;
+    }
 
-		bool m_Rotation;
+    const OrthographicCameraBounds& GetBounds() const
+    {
+        return m_Bounds;
+    }
 
-		glm::vec3 m_CameraPosition = { 0.0f, 0.0f, 0.0f };
-		float m_CameraRotation = 0.0f;
-		float m_CameraTranslationSpeed = 5.0f, m_CameraRotationSpeed = 180.0f;
-	};
+private:
+    bool OnMouseScrolled(MouseScrolledEvent& e);
+    bool OnWindowResized(WindowResizeEvent& e);
 
-}
+    float m_AspectRatio;
+    float m_ZoomLevel = 1.0f;
+    OrthographicCameraBounds m_Bounds;
+    OrthographicCamera m_Camera;
+
+    bool m_Rotation;
+
+    glm::vec3 m_CameraPosition = {0.0f, 0.0f, 0.0f};
+    float m_CameraRotation = 0.0f;
+    float m_CameraTranslationSpeed = 5.0f, m_CameraRotationSpeed = 180.0f;
+};
+
+} // namespace hazel
