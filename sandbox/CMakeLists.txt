@@ -13,4 +13,5 @@ target_link_libraries(
   PRIVATE project_warnings project_options)
   
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin)
+file(COPY assets DESTINATION ${CMAKE_BINARY_DIR}/bin)
 file(COPY assets DESTINATION ${CMAKE_CURRENT_BINARY_DIR}/bin/Debug)

@@ -1,7 +1,6 @@
 add_library(
   hazel
   src/Hazel.hpp
-  src/hzpch.cpp
   src/hzpch.h
   src/hazel/core/Application.cpp
   src/hazel/core/Application.hpp
