@@ -217,6 +217,18 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
 {
     HZ_PROFILE_FUNCTION();
 
+    constexpr float x = 7, y = 6;
+    constexpr float sheetWidth = 2560.0f, sheetHeight = 1664.0f;
+    constexpr float spriteWidth = 128.0f, spriteHeight = 128.0f;
+
+    // clang-format on
+    constexpr std::array<glm::vec2, 4> internalTextureCoords = {
+        glm::vec2{x * spriteWidth / sheetWidth, y * spriteHeight / sheetHeight},
+        glm::vec2{(x + 1) * spriteWidth / sheetWidth, y * spriteHeight / sheetHeight},
+        glm::vec2{(x + 1) * spriteWidth / sheetWidth, (y + 1) * spriteHeight / sheetHeight},
+        glm::vec2{x * spriteWidth / sheetWidth, (y + 1) * spriteHeight / sheetHeight}};
+    // clang-format off
+    
     if(s_Data.QuadIndexCount >= Renderer2DData::MaxIndices)
         FlushAndReset();
 
@@ -250,7 +262,8 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
                   });
     s_Data.QuadVertexBufferPtr -= s_Data.QuadVertexPositions.size();
 
-    std::for_each(s_Data.textureCoords.cbegin(), s_Data.textureCoords.cend(), [&](glm::vec2 singleCoord) {
+    // std::for_each(s_Data.textureCoords.cbegin(), s_Data.textureCoords.cend(), [&](glm::vec2 singleCoord) {
+    std::for_each(internalTextureCoords.cbegin(), internalTextureCoords.cend(), [&](glm::vec2 singleCoord) {
         s_Data.QuadVertexBufferPtr->Color = tintColor;
         s_Data.QuadVertexBufferPtr->TexCoord = singleCoord;
         s_Data.QuadVertexBufferPtr->TexIndex = textureIndex;
@@ -261,7 +274,7 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
     s_Data.QuadIndexCount += 6;
 
     s_Data.Stats.QuadCount++;
-}
+} // namespace hazel
 
 void Renderer2D::DrawRotatedQuad(const glm::vec2& position,
                                  const glm::vec2& size,

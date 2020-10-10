@@ -67,7 +67,7 @@ void ParticleSystem::OnRender(hazel::OrthographicCamera& camera)
 
         float size = glm::lerp(particle.SizeEnd, particle.SizeBegin, life);
 
-        glm::vec3 position{particle.Position.x, particle.Position.y, 0.3f};
+        glm::vec3 position{particle.Position.x, particle.Position.y, 0.0f};
         hazel::Renderer2D::DrawRotatedQuad(position, {size, size}, particle.Rotation, color);
     }
     hazel::Renderer2D::EndScene();
