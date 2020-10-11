@@ -25,6 +25,9 @@ private:
 
     hazel::Ref<hazel::Texture2D> m_CheckerboardTexture;
     hazel::Ref<hazel::Texture2D> m_SpriteSheet;
+    hazel::Ref<hazel::SubTexture2D> m_TextureStairs;
+    hazel::Ref<hazel::SubTexture2D> m_TextureBarrel;
+    hazel::Ref<hazel::SubTexture2D> m_TextureTree;
 
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
 

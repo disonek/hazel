@@ -17,5 +17,6 @@
 #include "hazel/renderer/Renderer.hpp"
 #include "hazel/renderer/Renderer2D.hpp"
 #include "hazel/renderer/Shader.hpp"
+#include "hazel/renderer/SubTexture2D.hpp"
 #include "hazel/renderer/Texture.hpp"
 #include "hazel/renderer/VertexArray.hpp"

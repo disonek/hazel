@@ -45,6 +45,8 @@ add_library(
   src/hazel/renderer/Shader.hpp
   src/hazel/renderer/Texture.cpp
   src/hazel/renderer/Texture.hpp
+  src/hazel/renderer/SubTexture2D.cpp
+  src/hazel/renderer/SubTexture2D.hpp
   src/hazel/renderer/VertexArray.cpp
   src/hazel/renderer/VertexArray.hpp
   src/hazel/renderer/Renderer2D.cpp
