@@ -24,6 +24,7 @@ private:
     hazel::Ref<hazel::Shader> m_FlatColorShader;
 
     hazel::Ref<hazel::Texture2D> m_CheckerboardTexture;
+    hazel::Ref<hazel::Texture2D> m_ChernoLogo;
     hazel::Ref<hazel::Texture2D> m_SpriteSheet;
     hazel::Ref<hazel::SubTexture2D> m_TextureStairs;
     hazel::Ref<hazel::SubTexture2D> m_TextureBarrel;
