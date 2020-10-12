@@ -65,6 +65,11 @@ void Application::PushOverlay(Layer* layer)
     layer->OnAttach();
 }
 
+void Application::Close()
+{
+    m_Running = false;
+}
+
 void Application::run()
 {
     HZ_PROFILE_FUNCTION();

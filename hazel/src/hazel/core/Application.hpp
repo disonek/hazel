@@ -30,6 +30,7 @@ public:
     {
         return *m_Window;
     }
+    void Close();
 
 private:
     void run();
