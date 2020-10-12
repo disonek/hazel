@@ -11,6 +11,7 @@
 #include "hazel/core/Log.hpp"
 #include "hazel/core/MouseCodes.hpp"
 #include "hazel/renderer/Buffer.hpp"
+#include "hazel/renderer/Framebuffer.hpp"
 #include "hazel/renderer/OrthographicCamera.hpp"
 #include "hazel/renderer/OrthographicCameraController.hpp"
 #include "hazel/renderer/RenderCommand.hpp"

@@ -25,6 +25,7 @@ private:
     // Temp
     hazel::Ref<hazel::VertexArray> m_SquareVA;
     hazel::Ref<hazel::Shader> m_FlatColorShader;
+    hazel::Ref<hazel::Framebuffer> m_Framebuffer;
 
     hazel::Ref<hazel::Texture2D> m_CheckerboardTexture;
     hazel::Ref<hazel::Texture2D> m_ChernoLogo;

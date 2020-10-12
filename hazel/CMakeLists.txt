@@ -31,6 +31,8 @@ add_library(
   src/hazel/renderer/OrthographicCameraController.hpp
   src/hazel/renderer/Buffer.cpp
   src/hazel/renderer/Buffer.hpp
+  src/hazel/renderer/Framebuffer.cpp
+  src/hazel/renderer/Framebuffer.hpp
   src/hazel/renderer/GraphicsContext.cpp
   src/hazel/renderer/GraphicsContext.hpp
   src/hazel/renderer/OrthographicCamera.cpp
@@ -52,7 +54,9 @@ add_library(
   src/hazel/renderer/Renderer2D.cpp
   src/hazel/renderer/Renderer2D.hpp
   src/platform/OpenGL/OpenGLBuffer.cpp
-  src/platform/OpenGL/OpenGLBuffer.hpp
+  src/platform/OpenGL/OpenGLBuffer.hpp 
+  src/platform/OpenGL/OpenGLFramebuffer.cpp
+  src/platform/OpenGL/OpenGLFramebuffer.hpp 
   src/platform/OpenGL/OpenGLContext.cpp
   src/platform/OpenGL/OpenGLContext.hpp
   src/platform/OpenGL/OpenGLRendererAPI.cpp
