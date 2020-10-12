@@ -34,17 +34,21 @@ public:
     {
         return m_Camera;
     }
+
     const OrthographicCamera& GetCamera() const
     {
         return m_Camera;
     }
+
     float GetZoomLevel() const
     {
         return m_ZoomLevel;
     }
+
     void SetZoomLevel(float level)
     {
         m_ZoomLevel = level;
+        CalculateView();
     }
 
     const OrthographicCameraBounds& GetBounds() const
@@ -53,6 +57,7 @@ public:
     }
 
 private:
+    void CalculateView();
     bool OnMouseScrolled(MouseScrolledEvent& e);
     bool OnWindowResized(WindowResizeEvent& e);
 

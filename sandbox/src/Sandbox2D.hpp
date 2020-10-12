@@ -17,6 +17,9 @@ public:
     void OnEvent(hazel::Event& e) override;
 
 private:
+    void testFunction(hazel::Timestep ts);
+    void emitParticle(hazel::Timestep ts);
+    void renderMap(hazel::Timestep ts);
     hazel::OrthographicCameraController m_CameraController;
 
     // Temp
@@ -29,6 +32,10 @@ private:
     hazel::Ref<hazel::SubTexture2D> m_TextureStairs;
     hazel::Ref<hazel::SubTexture2D> m_TextureBarrel;
     hazel::Ref<hazel::SubTexture2D> m_TextureTree;
+
+    hazel::Ref<hazel::SubTexture2D> m_TextureGrass;
+    hazel::Ref<hazel::SubTexture2D> m_TextureWater;
+    hazel::Ref<hazel::SubTexture2D> m_TextureDirt;
 
     glm::vec4 m_SquareColor = {0.2f, 0.3f, 0.8f, 1.0f};
 
