@@ -68,6 +68,7 @@ endif()
 
 add_subdirectory(hazel)
 add_subdirectory(sandbox)
+add_subdirectory(hazelnut)
 
 option(ENABLE_UNITY "Enable Unity builds of projects" OFF)
 if(ENABLE_UNITY)
