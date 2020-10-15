@@ -12,7 +12,7 @@ class ImGuiLayer : public Layer
 public:
     ImGuiLayer();
     ~ImGuiLayer();
-
+    void OnEvent(Event& e) override;
     void OnAttach() override;
     void OnDetach() override;
 
