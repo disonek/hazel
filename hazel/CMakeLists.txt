@@ -14,7 +14,6 @@ add_library(
   src/hazel/ImGui/ImGuiBuild.cpp
   src/hazel/ImGui/ImGuiLayer.cpp
   src/hazel/ImGui/ImGuiLayer.hpp
-  src/hazel/core/Input.cpp
   src/hazel/core/Input.hpp
   src/hazel/core/KeyCodes.hpp
   src/hazel/core/Layer.cpp
@@ -68,7 +67,6 @@ add_library(
   src/platform/OpenGL/OpenGLVertexArray.cpp
   src/platform/OpenGL/OpenGLVertexArray.hpp
   src/platform/windows/WindowsInput.cpp
-  src/platform/windows/WindowsInput.hpp
   src/platform/windows/WindowsWindow.cpp
   src/platform/windows/WindowsWindow.hpp
   vendor/stb_image/stb_image.hpp

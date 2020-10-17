@@ -32,6 +32,11 @@ public:
     }
     void Close();
 
+    ImGuiLayer* GetImGuiLayer()
+    {
+        return m_ImGuiLayer;
+    }
+
 private:
     void run();
     bool OnWnidowClose(WindowCloseEvent& e);
