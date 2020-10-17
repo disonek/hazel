@@ -21,3 +21,5 @@
 #include "hazel/renderer/SubTexture2D.hpp"
 #include "hazel/renderer/Texture.hpp"
 #include "hazel/renderer/VertexArray.hpp"
+#include "hazel/scene/Components.hpp"
+#include "hazel/scene/Scene.hpp"

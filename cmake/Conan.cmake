@@ -15,6 +15,7 @@ macro(run_conan)
 
   conan_cmake_run(
     REQUIRES
+    entt/3.5.2
     ${CONAN_EXTRA_REQUIRES}
     OPTIONS
     ${CONAN_EXTRA_OPTIONS}

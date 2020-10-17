@@ -52,6 +52,9 @@ add_library(
   src/hazel/renderer/VertexArray.hpp
   src/hazel/renderer/Renderer2D.cpp
   src/hazel/renderer/Renderer2D.hpp
+  src/hazel/scene/Scene.cpp
+  src/hazel/scene/Scene.hpp
+  src/hazel/scene/Components.hpp
   src/platform/OpenGL/OpenGLBuffer.cpp
   src/platform/OpenGL/OpenGLBuffer.hpp 
   src/platform/OpenGL/OpenGLFramebuffer.cpp
@@ -86,7 +89,7 @@ target_precompile_headers(hazel PUBLIC src/hzpch.h)
 
 target_link_libraries(
   hazel
-  PUBLIC glm::glm glfw Glad imgui spdlog
+  PUBLIC glm::glm glfw Glad imgui spdlog CONAN_PKG::entt
   PRIVATE project_warnings project_options)
 
 target_include_directories(
