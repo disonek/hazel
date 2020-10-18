@@ -30,6 +30,7 @@ add_library(
   src/hazel/renderer/OrthographicCameraController.hpp
   src/hazel/renderer/Buffer.cpp
   src/hazel/renderer/Buffer.hpp
+  src/hazel/renderer/Camera.hpp
   src/hazel/renderer/Framebuffer.cpp
   src/hazel/renderer/Framebuffer.hpp
   src/hazel/renderer/GraphicsContext.cpp

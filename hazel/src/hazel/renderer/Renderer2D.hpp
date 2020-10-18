@@ -1,5 +1,6 @@
 #pragma once
 
+#include "hazel/renderer/Camera.hpp"
 #include "hazel/renderer/OrthographicCamera.hpp"
 #include "hazel/renderer/SubTexture2D.hpp"
 #include "hazel/renderer/Texture.hpp"
@@ -11,6 +12,7 @@ class Renderer2D
 public:
     static void Init();
     static void Shutdown();
+    static void BeginScene(const Camera& camera, const glm::mat4& transform);
     static void BeginScene(const OrthographicCamera& camera);
     static void EndScene();
     static void Flush();
