@@ -62,6 +62,7 @@ void Sandbox2D::OnUpdate(hazel::Timestep ts)
         hazel::RenderCommand::Clear();
         emitParticle(ts);
         testFunction(ts);
+        renderMap(ts);
     }
 }
 

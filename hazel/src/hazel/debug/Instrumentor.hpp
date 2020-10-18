@@ -27,16 +27,9 @@ struct InstrumentationSession
 
 class Instrumentor
 {
-private:
-    std::mutex m_Mutex;
-    InstrumentationSession* m_CurrentSession;
-    std::ofstream m_OutputStream;
-
 public:
-    Instrumentor()
-        : m_CurrentSession(nullptr)
-    {
-    }
+    Instrumentor(const Instrumentor&) = delete;
+    Instrumentor(Instrumentor&&) = delete;
 
     void BeginSession(const std::string& name, const std::string& filepath = "results.json")
     {
@@ -106,6 +99,16 @@ public:
     }
 
 private:
+    Instrumentor()
+        : m_CurrentSession(nullptr)
+    {
+    }
+
+    ~Instrumentor()
+    {
+        EndSession();
+    }
+
     void WriteHeader()
     {
         m_OutputStream << "{\"otherData\": {},\"traceEvents\":[{}";
@@ -130,6 +133,11 @@ private:
             m_CurrentSession = nullptr;
         }
     }
+
+private:
+    std::mutex m_Mutex;
+    InstrumentationSession* m_CurrentSession;
+    std::ofstream m_OutputStream;
 };
 
 class InstrumentationTimer
@@ -222,9 +230,11 @@ constexpr auto CleanupOutputString(const char (&expr)[N], const char (&remove)[K
 
 #define HZ_PROFILE_BEGIN_SESSION(name, filepath) ::hazel::Instrumentor::Get().BeginSession(name, filepath)
 #define HZ_PROFILE_END_SESSION() ::hazel::Instrumentor::Get().EndSession()
-#define HZ_PROFILE_SCOPE(name)                                                                    \
-    constexpr auto fixedName = ::hazel::InstrumentorUtils::CleanupOutputString(name, "__cdecl "); \
-    ::hazel::InstrumentationTimer timer##__LINE__(fixedName.Data)
+#define HZ_PROFILE_SCOPE_LINE2(name, line)                                                              \
+    constexpr auto fixedName##line = ::hazel::InstrumentorUtils::CleanupOutputString(name, "__cdecl "); \
+    ::hazel::InstrumentationTimer timer##line(fixedName##line.Data)
+#define HZ_PROFILE_SCOPE_LINE(name, line) HZ_PROFILE_SCOPE_LINE2(name, line)
+#define HZ_PROFILE_SCOPE(name) HZ_PROFILE_SCOPE_LINE(name, __LINE__)
 #define HZ_PROFILE_FUNCTION() HZ_PROFILE_SCOPE(HZ_FUNC_SIG)
 #else
 #define HZ_PROFILE_BEGIN_SESSION(name, filepath)
