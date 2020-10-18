@@ -22,4 +22,5 @@
 #include "hazel/renderer/Texture.hpp"
 #include "hazel/renderer/VertexArray.hpp"
 #include "hazel/scene/Components.hpp"
+#include "hazel/scene/Entity.hpp"
 #include "hazel/scene/Scene.hpp"

@@ -55,6 +55,8 @@ add_library(
   src/hazel/scene/Scene.cpp
   src/hazel/scene/Scene.hpp
   src/hazel/scene/Components.hpp
+  src/hazel/scene/Entity.cpp
+  src/hazel/scene/Entity.hpp
   src/platform/OpenGL/OpenGLBuffer.cpp
   src/platform/OpenGL/OpenGLBuffer.hpp 
   src/platform/OpenGL/OpenGLFramebuffer.cpp
