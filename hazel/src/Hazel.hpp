@@ -24,3 +24,5 @@
 #include "hazel/scene/Components.hpp"
 #include "hazel/scene/Entity.hpp"
 #include "hazel/scene/Scene.hpp"
+#include "hazel/scene/ScriptableEntity.hpp"
+

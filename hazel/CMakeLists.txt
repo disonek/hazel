@@ -57,6 +57,7 @@ add_library(
   src/hazel/scene/Scene.hpp
   src/hazel/scene/SceneCamera.cpp
   src/hazel/scene/SceneCamera.hpp
+  src/hazel/scene/ScriptableEntity.hpp
   src/hazel/scene/Components.hpp
   src/hazel/scene/Entity.cpp
   src/hazel/scene/Entity.hpp
