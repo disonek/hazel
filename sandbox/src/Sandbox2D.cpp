@@ -114,7 +114,7 @@ void Sandbox2D::testFunction(hazel::Timestep ts)
 
 void Sandbox2D::emitParticle(hazel::Timestep ts)
 {
-    if(hazel::Input::IsMouseButtonPressed(HZ_MOUSE_BUTTON_LEFT))
+    if(hazel::Input::IsMouseButtonPressed(hazel::Mouse::ButtonLeft))
     {
         auto [x, y] = hazel::Input::GetMousePosition();
         auto width = hazel::Application::Get().GetWindow().GetWidth();

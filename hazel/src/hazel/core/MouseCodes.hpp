@@ -2,7 +2,10 @@
 
 namespace hazel {
 
-typedef enum class MouseCode : uint16_t
+using MouseCode = uint16_t;
+
+namespace Mouse {
+enum : MouseCode
 {
     // From glfw3.h
     Button0 = 0,
@@ -18,24 +21,7 @@ typedef enum class MouseCode : uint16_t
     ButtonLeft = Button0,
     ButtonRight = Button1,
     ButtonMiddle = Button2
-} Mouse;
+};
 
-inline std::ostream& operator<<(std::ostream& os, MouseCode mouseCode)
-{
-    os << static_cast<int32_t>(mouseCode);
-    return os;
-}
+} // namespace Mouse
 } // namespace hazel
-
-#define HZ_MOUSE_BUTTON_0 ::hazel::Mouse::Button0
-#define HZ_MOUSE_BUTTON_1 ::hazel::Mouse::Button1
-#define HZ_MOUSE_BUTTON_2 ::hazel::Mouse::Button2
-#define HZ_MOUSE_BUTTON_3 ::hazel::Mouse::Button3
-#define HZ_MOUSE_BUTTON_4 ::hazel::Mouse::Button4
-#define HZ_MOUSE_BUTTON_5 ::hazel::Mouse::Button5
-#define HZ_MOUSE_BUTTON_6 ::hazel::Mouse::Button6
-#define HZ_MOUSE_BUTTON_7 ::hazel::Mouse::Button7
-#define HZ_MOUSE_BUTTON_LAST ::hazel::Mouse::ButtonLast
-#define HZ_MOUSE_BUTTON_LEFT ::hazel::Mouse::ButtonLeft
-#define HZ_MOUSE_BUTTON_RIGHT ::hazel::Mouse::ButtonRight
-#define HZ_MOUSE_BUTTON_MIDDLE ::hazel::Mouse::ButtonMiddle
