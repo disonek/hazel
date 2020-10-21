@@ -9,33 +9,7 @@
 
 namespace hazel {
 
-// static void DoMath(const glm::mat4& transform) {}
-// static void OnTransformConstruct(entt::registry& regstry, entt::entity entity) {}
-
-Scene::Scene()
-{
-    // entt::entity entity = m_Registry.create();
-    // m_Registry.emplace<TransformComponent>(entity, glm::mat4(1.0f));
-
-    // m_Registry.on_construct<TransformComponent>().connect<&OnTransformConstruct>();
-
-    // if(m_Registry.has<TransformComponent>(entity))
-    //     TransformComponent& transform = m_Registry.get<TransformComponent>(entity);
-
-    // auto view = m_Registry.view<TransformComponent>();
-    // for(auto entity : view)
-    // {
-    //     TransformComponent& transform = view.get<TransformComponent>(entity);
-    // }
-
-    // auto group = m_Registry.group<TransformComponent>(entt::get<SpriteRendererComponent>);
-
-    // for(auto entity : group)
-    // {
-    //     auto [transform, sprite] = group.get<TransformComponent, SpriteRendererComponent>(entity);
-    // }
-}
-
+Scene::Scene() {}
 Scene::~Scene() {}
 
 Entity Scene::CreateEntity(const std::string& name)
@@ -54,14 +28,12 @@ void Scene::OnUpdate(Timestep ts)
         m_Registry.view<NativeScriptComponent>().each([=](auto entity, auto& nsc) {
             if(!nsc.Instance)
             {
-                nsc.InstantiateFunction();
+                nsc.Instance = nsc.InstantiateScript();
                 nsc.Instance->m_Entity = Entity{entity, this};
-
-                if(nsc.OnCreateFunction)
-                    nsc.OnCreateFunction(nsc.Instance);
+                nsc.Instance->OnCreate();
             }
-            if(nsc.OnUpdateFunction)
-                nsc.OnUpdateFunction(nsc.Instance, ts);
+
+            nsc.Instance->OnUpdate(ts);
         });
     }
     Camera* mainCamera = nullptr;
