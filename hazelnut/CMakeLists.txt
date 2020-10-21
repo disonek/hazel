@@ -2,6 +2,8 @@ add_executable(hazelnut
   src/HazelNutApp.cpp 
   src/EditorLayer.hpp 
   src/EditorLayer.cpp
+  src/panels/SceneHierarchyPanel.hpp
+  src/panels/SceneHierarchyPanel.cpp
   )
 
 target_link_libraries(
