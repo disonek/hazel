@@ -1,9 +1,9 @@
 #pragma once
 
-#include "hazel/Core/Timestep.hpp"
-#include "hazel/Events/ApplicationEvent.hpp"
-#include "hazel/Events/MouseEvent.hpp"
-#include "hazel/Renderer/OrthographicCamera.hpp"
+#include "hazel/core/Timestep.hpp"
+#include "hazel/events/ApplicationEvent.hpp"
+#include "hazel/events/MouseEvent.hpp"
+#include "hazel/renderer/OrthographicCamera.hpp"
 
 namespace hazel {
 
