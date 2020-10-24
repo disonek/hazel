@@ -78,5 +78,7 @@
     "python.pythonPath": "C:\\Program Files\\Python38\\python.exe",
     "C_Cpp.dimInactiveRegions": false,
     "C_Cpp.errorSquiggles": "Disabled",
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "font-switcher.enableLivePreview": true,
+    "font-switcher.fontFamily": "Consolas, Courier New, monospace, Source Code Pro Semibold"
 }
