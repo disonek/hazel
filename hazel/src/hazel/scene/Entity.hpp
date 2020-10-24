@@ -16,7 +16,9 @@ public:
     T& AddComponent(Args&&... args)
     {
         HZ_CORE_ASSERT(!HasComponent<T>(), "Entity already has component!");
-        return m_Scene->m_Registry.emplace<T>(m_EntityHandle, std::forward<Args>(args)...);
+        T& component = m_Scene->m_Registry.emplace<T>(m_EntityHandle, std::forward<Args>(args)...);
+        m_Scene->OnComponentAdded<T>(*this, component);
+        return component;
     }
 
     template <typename T>
@@ -42,7 +44,12 @@ public:
     operator bool() const
     {
         return m_EntityHandle != entt::null;
-    };
+    }
+
+    operator entt::entity() const
+    {
+        return m_EntityHandle;
+    }
 
     operator uint32_t() const
     {
