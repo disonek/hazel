@@ -63,6 +63,7 @@ add_library(
   src/hazel/scene/Components.hpp
   src/hazel/scene/Entity.cpp
   src/hazel/scene/Entity.hpp
+  src/hazel/utils/PlatformUtils.hpp
   src/platform/OpenGL/OpenGLBuffer.cpp
   src/platform/OpenGL/OpenGLBuffer.hpp 
   src/platform/OpenGL/OpenGLFramebuffer.cpp
@@ -80,6 +81,7 @@ add_library(
   src/platform/windows/WindowsInput.cpp
   src/platform/windows/WindowsWindow.cpp
   src/platform/windows/WindowsWindow.hpp
+  src/platform/windows/WindowsPlatformUtils.cpp
   vendor/stb_image/stb_image.hpp
   vendor/stb_image/stb_image.cpp)
 

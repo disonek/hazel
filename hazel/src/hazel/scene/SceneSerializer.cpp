@@ -171,8 +171,7 @@ void SceneSerializer::Serialize(const std::string& filepath)
 
 void SceneSerializer::SerializeRuntime(const std::string& filepath)
 {
-    // Not implemented
-    HZ_CORE_ASSERT(false, "ast");
+    HZ_CORE_ASSERT(false, "SerializeRuntime not implemented");
 }
 
 bool SceneSerializer::Deserialize(const std::string& filepath)
@@ -248,8 +247,7 @@ bool SceneSerializer::Deserialize(const std::string& filepath)
 
 bool SceneSerializer::DeserializeRuntime(const std::string& filepath)
 {
-    // Not implemented
-    HZ_CORE_ASSERT(false, "asd");
+    HZ_CORE_ASSERT(false, "DeserializeRuntime not implemented");
     return false;
 }
 
