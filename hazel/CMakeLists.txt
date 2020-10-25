@@ -58,6 +58,8 @@ add_library(
   src/hazel/scene/SceneCamera.cpp
   src/hazel/scene/SceneCamera.hpp
   src/hazel/scene/ScriptableEntity.hpp
+  src/hazel/scene/SceneSerializer.cpp
+  src/hazel/scene/SceneSerializer.hpp
   src/hazel/scene/Components.hpp
   src/hazel/scene/Entity.cpp
   src/hazel/scene/Entity.hpp
@@ -89,13 +91,13 @@ add_subdirectory(vendor/spdlog)
 
 target_compile_definitions(
   hazel PUBLIC HZ_DEBUG=1 HZ_PLATFORM_WINDOWS=1 GLFW_INCLUDE_NONE=1
-               _CRT_SECURE_NO_WARNINGS=1 HZ_ENABLE_ASSERTS=1)
+               _CRT_SECURE_NO_WARNINGS=1 HZ_ENABLE_ASSERTS=1 _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING=1)
 
 target_precompile_headers(hazel PUBLIC src/hzpch.h)
 
 target_link_libraries(
   hazel
-  PUBLIC glm::glm glfw Glad imgui spdlog CONAN_PKG::entt
+  PUBLIC glm::glm glfw Glad imgui spdlog CONAN_PKG::yaml-cpp CONAN_PKG::entt
   PRIVATE project_warnings project_options)
 
 target_include_directories(
