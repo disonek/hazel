@@ -80,5 +80,8 @@
     "C_Cpp.errorSquiggles": "Disabled",
     "editor.formatOnSave": true,
     "font-switcher.enableLivePreview": true,
-    "font-switcher.fontFamily": "Consolas, Courier New, monospace, Source Code Pro Semibold"
+    "font-switcher.fontFamily": "Consolas, Courier New, monospace, Source Code Pro Semibold",
+    "cmake.configureArgs": [
+        "-DCMAKE_BUILD_TYPE=${buildType}"
+    ]
 }

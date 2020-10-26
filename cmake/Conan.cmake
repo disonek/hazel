@@ -12,10 +12,9 @@ macro(run_conan)
     bincrafters
     URL
     https://api.bintray.com/conan/bincrafters/public-conan)
-
+    
   conan_cmake_run(
     REQUIRES
-    entt/3.5.2
     ${CONAN_EXTRA_REQUIRES}
     OPTIONS
     ${CONAN_EXTRA_OPTIONS}

@@ -99,8 +99,8 @@ target_precompile_headers(hazel PUBLIC src/hzpch.h)
 
 target_link_libraries(
   hazel
-  PUBLIC glm::glm glfw Glad imgui spdlog CONAN_PKG::yaml-cpp CONAN_PKG::entt
-  PRIVATE project_warnings project_options)
+  PUBLIC glm::glm spdlog CONAN_PKG::entt imgui
+  PRIVATE project_warnings project_options glfw Glad CONAN_PKG::yaml-cpp )
 
 target_include_directories(
   hazel

@@ -2,4 +2,3 @@ build/
 *.log
 .vs/
 .clangd/
-compile_commands.json

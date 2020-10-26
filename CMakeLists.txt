@@ -2,7 +2,8 @@ cmake_minimum_required(VERSION 3.15)
 
 # Set the project name to your project name, my project isn't very descriptive
 project(hazel CXX C)
-set(CMAKE_BUILD_TYPE Debug)
+# set(CMAKE_BUILD_TYPE Debug)
+
 include(cmake/StandardProjectSettings.cmake)
 include(cmake/PreventInSourceBuilds.cmake)
 
@@ -51,8 +52,10 @@ if(ENABLE_PCH)
 endif()
 
 # Set up some extra Conan dependencies based on our needs before loading Conan
-set(CONAN_EXTRA_REQUIRES "yaml-cpp/0.6.3")
-set(CONAN_EXTRA_OPTIONS "")
+set(CONAN_EXTRA_REQUIRES 
+  "yaml-cpp/0.6.3 
+  entt/3.5.2")
+set(CONAN_EXTRA_OPTIONS "yaml-cpp:shared=False")
 
 include(cmake/Conan.cmake)
 run_conan()
