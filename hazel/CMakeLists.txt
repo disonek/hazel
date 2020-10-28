@@ -1,3 +1,17 @@
+
+add_subdirectory(vendor/glm)
+add_subdirectory(vendor/GLFW)
+add_subdirectory(vendor/Glad)
+add_subdirectory(vendor/imgui)
+add_subdirectory(vendor/spdlog)
+add_subdirectory(vendor/yaml-cpp)
+
+target_compile_options(spdlog PRIVATE ${disable_warrnings}) 
+target_compile_options(imgui PRIVATE ${disable_warrnings}) 
+target_compile_options(Glad PRIVATE ${disable_warrnings}) 
+target_compile_options(glfw PRIVATE ${disable_warrnings}) 
+target_compile_options(yaml-cpp PRIVATE ${disable_warrnings})  
+
 add_library(
   hazel
   src/Hazel.hpp
@@ -85,12 +99,10 @@ add_library(
   vendor/stb_image/stb_image.hpp
   vendor/stb_image/stb_image.cpp)
 
-add_subdirectory(vendor/glm)
-add_subdirectory(vendor/GLFW)
-add_subdirectory(vendor/Glad)
-add_subdirectory(vendor/imgui)
-add_subdirectory(vendor/spdlog)
 
+
+ 
+  
 target_compile_definitions(
   hazel PUBLIC HZ_DEBUG=1 HZ_PLATFORM_WINDOWS=1 GLFW_INCLUDE_NONE=1
                _CRT_SECURE_NO_WARNINGS=1 HZ_ENABLE_ASSERTS=1 _SILENCE_CXX17_ITERATOR_BASE_CLASS_DEPRECATION_WARNING=1)
@@ -100,8 +112,8 @@ target_precompile_headers(hazel PUBLIC src/hzpch.h)
 target_link_libraries(
   hazel
   PUBLIC glm::glm spdlog CONAN_PKG::entt imgui
-  PRIVATE project_warnings project_options glfw Glad CONAN_PKG::yaml-cpp )
-
+  PRIVATE project_warnings project_options glfw Glad yaml-cpp )
+  
 target_include_directories(
   hazel
   PUBLIC src src/hazel/core src/hazel

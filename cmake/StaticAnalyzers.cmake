@@ -18,6 +18,7 @@ if(ENABLE_CPPCHECK)
   endif()
 endif()
 
+
 if(ENABLE_CLANG_TIDY)
   find_program(CLANGTIDY clang-tidy)
   if(CLANGTIDY)

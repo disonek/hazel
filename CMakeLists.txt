@@ -52,10 +52,8 @@ if(ENABLE_PCH)
 endif()
 
 # Set up some extra Conan dependencies based on our needs before loading Conan
-set(CONAN_EXTRA_REQUIRES 
-  "yaml-cpp/0.6.3 
-  entt/3.5.2")
-set(CONAN_EXTRA_OPTIONS "yaml-cpp:shared=False")
+set(CONAN_EXTRA_REQUIRES "entt/3.5.2")
+set(CONAN_EXTRA_OPTIONS "")
 
 include(cmake/Conan.cmake)
 run_conan()
