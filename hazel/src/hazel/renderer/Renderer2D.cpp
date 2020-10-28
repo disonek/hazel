@@ -241,7 +241,7 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
                           const glm::vec2& size,
                           const Ref<Texture2D>& texture,
                           float tilingFactor,
-                          const glm::vec4& tintColor)
+                          const glm::vec4&)
 {
     HZ_PROFILE_FUNCTION();
 
@@ -255,7 +255,7 @@ void Renderer2D::DrawQuad(const glm::vec3& position,
                           const glm::vec2& size,
                           const Ref<SubTexture2D>& subTexture,
                           float tilingFactor,
-                          const glm::vec4& tintColor)
+                          const glm::vec4&)
 {
     HZ_PROFILE_FUNCTION();
 
@@ -284,7 +284,7 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position,
                                  float rotation,
                                  const Ref<Texture2D>& texture,
                                  float tilingFactor,
-                                 const glm::vec4& tintColor)
+                                 const glm::vec4&)
 {
     HZ_PROFILE_FUNCTION();
 
@@ -300,7 +300,7 @@ void Renderer2D::DrawRotatedQuad(const glm::vec3& position,
                                  float rotation,
                                  const Ref<SubTexture2D>& subTexture,
                                  float tilingFactor,
-                                 const glm::vec4& tintColor)
+                                 const glm::vec4&)
 {
     HZ_PROFILE_FUNCTION();
 

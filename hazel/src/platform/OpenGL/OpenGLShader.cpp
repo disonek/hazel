@@ -54,7 +54,7 @@ std::string OpenGLShader::ReadFile(const std::string& filepath)
     if(in)
     {
         in.seekg(0, std::ios::end);
-        size_t size = in.tellg();
+        int size = in.tellg();
         if(size != -1)
         {
             result.resize(size);

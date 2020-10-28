@@ -4,13 +4,13 @@
 
 namespace hazel {
 
-void OpenGLMessageCallback(unsigned source,
-                           unsigned type,
-                           unsigned id,
+void OpenGLMessageCallback(unsigned /*source*/,
+                           unsigned /*type*/,
+                           unsigned /*id*/,
                            unsigned severity,
-                           int length,
+                           int /*length*/,
                            const char* message,
-                           const void* userParam)
+                           const void* /*userParam*/)
 {
     switch(severity)
     {

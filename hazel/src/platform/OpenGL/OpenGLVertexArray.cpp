@@ -30,6 +30,8 @@ static GLenum ShaderDataTypeToOpenGLBaseType(ShaderDataType type)
             return GL_INT;
         case ShaderDataType::Bool:
             return GL_BOOL;
+        default:
+            break;
     }
 
     HZ_CORE_ASSERT(false, "Unknown ShaderDataType!");

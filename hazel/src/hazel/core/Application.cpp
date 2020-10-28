@@ -1,6 +1,6 @@
 #include "Application.hpp"
 
-#include <glfw/glfw3.h>
+#include <GLFW/glfw3.h>
 
 #include "hazel/core/Input.hpp"
 #include "hazel/core/Log.hpp"

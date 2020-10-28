@@ -43,6 +43,8 @@ static uint32_t ShaderDataTypeSize(ShaderDataType type)
             return 4 * 4;
         case ShaderDataType::Bool:
             return 1;
+        default:
+            break;
     }
 
     HZ_CORE_ASSERT(false, "Unknown ShaderDataType!");
@@ -94,6 +96,8 @@ struct BufferElement
                 return 4;
             case ShaderDataType::Bool:
                 return 1;
+            default:
+                break;
         }
 
         HZ_CORE_ASSERT(false, "Unknown ShaderDataType!");

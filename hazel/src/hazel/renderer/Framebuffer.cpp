@@ -1,6 +1,6 @@
 #include "Framebuffer.hpp"
 
-#include "hazel/Renderer/Renderer.hpp"
+#include "hazel/renderer/Renderer.hpp"
 #include "platform/OpenGL/OpenGLFramebuffer.hpp"
 
 namespace hazel {
