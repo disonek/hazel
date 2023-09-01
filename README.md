@@ -1,3 +1,3 @@
-# hazel
+# My version of
 
-TODO:
+[Hazel](https://github.com/TheCherno/Hazel)
